@@ -129,28 +129,28 @@ export default function ContactSection() {
               <div className="flex space-x-4">
                 <a 
                   href="#" 
-                  className="bg-white dark:bg-dark-bg p-3 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-dark-border"
+                  className="bg-white dark:bg-[hsl(var(--dark-bg))] p-3 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-dark-border"
                   aria-label="GitHub Profile"
                 >
                   <Github className="h-5 w-5 text-gray-700 dark:text-gray-300" />
                 </a>
                 <a 
                   href="#" 
-                  className="bg-white dark:bg-dark-bg p-3 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-dark-border"
+                  className="bg-white dark:bg-[hsl(var(--dark-bg))] p-3 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-dark-border"
                   aria-label="LinkedIn Profile"
                 >
                   <Linkedin className="h-5 w-5 text-gray-700 dark:text-gray-300" />
                 </a>
                 <a 
                   href="#" 
-                  className="bg-white dark:bg-dark-bg p-3 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-dark-border"
+                  className="bg-white dark:bg-[hsl(var(--dark-bg))] p-3 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-dark-border"
                   aria-label="Twitter Profile"
                 >
                   <Twitter className="h-5 w-5 text-gray-700 dark:text-gray-300" />
                 </a>
                 <a 
                   href="#" 
-                  className="bg-white dark:bg-dark-bg p-3 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-dark-border"
+                  className="bg-white dark:bg-[hsl(var(--dark-bg))] p-3 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-dark-border"
                   aria-label="Dribbble Profile"
                 >
                   <Dribbble className="h-5 w-5 text-gray-700 dark:text-gray-300" />
