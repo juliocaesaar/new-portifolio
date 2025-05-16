@@ -33,3 +33,16 @@ author = "agent"
 task = "shell.exec"
 args = "npm run dev"
 waitForPort = 5000
+
+[[workflows.workflow]]
+name = "run app"
+mode = "sequential"
+author = 2090260
+
+[[workflows.workflow.tasks]]
+task = "packager.installForLanguage"
+args = "nodejs"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Start application"
