@@ -40,7 +40,7 @@
   --primary-foreground: 211 100% 99%;
   --secondary: 240 3.7% 15.9%;
   --secondary-foreground: 0 0% 98%;
-  --accent: 240 3.7% 15.9%;
+  --accent: 142 69% 58%;
   --accent-foreground: 0 0% 98%;
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 0 0% 98%;
@@ -49,6 +49,11 @@
   --dark-bg: 240 10% 3.9%;
   --dark-card: 240 10% 6%;
   --dark-border: 240 3.7% 15.9%;
+  --dark-hover: 240 3.7% 15.9%;
+  --dark-text: 0 0% 98%;
+  --dark-text-secondary: 240 5% 64.9%;
+  --dark-primary: 142 69% 58%;
+  --dark-primary-hover: 142 69% 52%;
 }
 
 @layer base {
@@ -73,6 +78,14 @@
 
 /* Animation utilities */
 @layer utilities {
+  .dark-mode-transition {
+    @apply transition-colors duration-200;
+  }
+
+  .dark-hover {
+    @apply hover:bg-[hsl(var(--dark-hover))];
+  }
+
   .animate-blob {
     animation: blob 7s infinite;
   }
