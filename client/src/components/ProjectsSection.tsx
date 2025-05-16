@@ -82,7 +82,7 @@ const projects: Project[] = [
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="py-20 bg-gray-50 dark:bg-dark-card/30">
+    <section id="projects" className="py-20 alt">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="text-center mb-16"

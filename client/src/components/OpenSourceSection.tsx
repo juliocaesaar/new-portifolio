@@ -65,7 +65,7 @@ const openSourceProjects: OpenSourceProject[] = [
 
 export default function OpenSourceSection() {
   return (
-    <section id="open-source" className="py-20">
+    <section id="open-source" className="py-20 alt">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="text-center mb-16"
