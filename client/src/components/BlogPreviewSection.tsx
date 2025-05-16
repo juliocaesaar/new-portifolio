@@ -51,7 +51,7 @@ const featuredPosts: BlogPost[] = [
 
 export default function BlogPreviewSection() {
   return (
-    <section id="blog" className="py-20 bg-gray-50 dark:bg-dark-card/30">
+    <section id="blog" className="py-20 alt">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12"

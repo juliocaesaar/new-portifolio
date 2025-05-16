@@ -85,7 +85,7 @@ const skillCategories: SkillCategory[] = [
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="py-20 bg-gray-50 dark:bg-dark-card/30">
+    <section id="skills" className="py-20 alt">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="text-center mb-12"

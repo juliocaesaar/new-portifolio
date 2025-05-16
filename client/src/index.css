@@ -72,8 +72,17 @@
   }
 
   body {
-    @apply font-sans antialiased bg-background text-foreground;
+    @apply font-sans antialiased bg-background text-foreground min-h-screen;
   }
+}
+
+/* Add consistent section backgrounds */
+section {
+  @apply bg-background;
+}
+
+section.alt {
+  @apply bg-muted/50 dark:bg-dark-card/30;
 }
 
 /* Animation utilities */
@@ -89,24 +98,24 @@
   .animate-blob {
     animation: blob 7s infinite;
   }
-  
+
   .animation-delay-2000 {
     animation-delay: 2s;
   }
-  
+
   .animation-delay-4000 {
     animation-delay: 4s;
   }
-  
+
   .animate-in {
     animation: fadeIn 0.7s ease forwards;
   }
-  
+
   .bg-pattern-light {
     background-image: radial-gradient(hsla(var(--muted) / 0.5) 1px, transparent 0);
     background-size: 20px 20px;
   }
-  
+
   .bg-pattern-dark {
     background-image: radial-gradient(hsla(var(--muted) / 0.2) 1px, transparent 0);
     background-size: 20px 20px;
@@ -115,11 +124,11 @@
   .dark-bg {
     @apply bg-[hsl(var(--dark-bg))];
   }
-  
+
   .dark-card {
     @apply bg-[hsl(var(--dark-card))];
   }
-  
+
   .dark-border {
     @apply border-[hsl(var(--dark-border))];
   }

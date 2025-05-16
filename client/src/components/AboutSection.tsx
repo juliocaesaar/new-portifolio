@@ -8,7 +8,7 @@ import { scrollToElement } from "@/lib/utils";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-20 bg-gray-50 dark:bg-dark-card/30">
+    <section id="about" className="py-20 alt">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-16 items-center">
           <motion.div 
