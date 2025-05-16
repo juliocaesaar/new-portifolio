@@ -1,14 +1,7 @@
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Briefcase, Music, Home, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { scrollToElement } from "@/lib/utils";
-import { 
-  SiMicrosoft, 
-  SiUber, 
-  SiSpotify, 
-  SiAirbnb, 
-  SiSlack 
-} from "react-icons/si";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -131,11 +124,25 @@ export default function HeroSection() {
           transition={{ delay: 0.8, duration: 0.5 }}
         >
           <p className="text-sm text-gray-500 dark:text-gray-400 w-full text-center mb-6">Trusted by companies worldwide</p>
-          <SiMicrosoft className="h-8 w-8 text-gray-400 dark:text-gray-600" />
-          <SiUber className="h-8 w-8 text-gray-400 dark:text-gray-600" />
-          <SiSpotify className="h-8 w-8 text-gray-400 dark:text-gray-600" />
-          <SiAirbnb className="h-8 w-8 text-gray-400 dark:text-gray-600" />
-          <SiSlack className="h-8 w-8 text-gray-400 dark:text-gray-600" />
+          <div className="flex items-center justify-center rounded-full w-12 h-12 bg-gray-100 dark:bg-gray-800">
+            <Briefcase className="h-6 w-6 text-gray-500 dark:text-gray-400" />
+          </div>
+          <div className="flex items-center justify-center rounded-full w-12 h-12 bg-gray-100 dark:bg-gray-800">
+            <Music className="h-6 w-6 text-gray-500 dark:text-gray-400" />
+          </div>
+          <div className="flex items-center justify-center rounded-full w-12 h-12 bg-gray-100 dark:bg-gray-800">
+            <Home className="h-6 w-6 text-gray-500 dark:text-gray-400" />
+          </div>
+          <div className="flex items-center justify-center rounded-full w-12 h-12 bg-gray-100 dark:bg-gray-800">
+            <MessageSquare className="h-6 w-6 text-gray-500 dark:text-gray-400" />
+          </div>
+          <div className="flex items-center justify-center rounded-full w-12 h-12 bg-gray-100 dark:bg-gray-800">
+            <svg viewBox="0 0 24 24" className="h-6 w-6 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </div>
         </motion.div>
       </div>
     </section>
