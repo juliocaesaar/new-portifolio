@@ -100,28 +100,25 @@ export default function Footer() {
                 <li>
                   <a 
                     href="#" 
-                    className="bg-white dark:bg-dark-bg p-3 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-dark-border"
-                    aria-label="LinkedIn Profile"
+                    className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-green-400 transition-colors flex items-center"
                   >
-                    <Linkedin className="h-5 w-5 text-gray-700 dark:text-gray-300" />
+                    <Linkedin className="mr-2 h-4 w-4" /> LinkedIn
                   </a>
                 </li>
                 <li>
                   <a 
                     href="#" 
-                    className="bg-white dark:bg-dark-bg p-3 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-dark-border"
-                    aria-label="Twitter Profile"
+                    className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-green-400 transition-colors flex items-center"
                   >
-                    <Twitter className="h-5 w-5 text-gray-700 dark:text-gray-300" />
+                    <Twitter className="mr-2 h-4 w-4" /> Twitter
                   </a>
                 </li>
                 <li>
                   <a 
                     href="#" 
-                    className="bg-white dark:bg-dark-bg p-3 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-dark-border"
-                    aria-label="Dribbble Profile"
+                    className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-green-400 transition-colors flex items-center"
                   >
-                    <Dribbble className="h-5 w-5 text-gray-700 dark:text-gray-300" />
+                    <Dribbble className="mr-2 h-4 w-4" /> Dribbble
                   </a>
                 </li>
               </ul>
