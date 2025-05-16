@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
@@ -51,20 +52,20 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           <Link 
             href="/" 
-            className="logo font-bold text-xl md:text-2xl transition-transform duration-300 hover:rotate-[-5deg]"
+            className="logo font-bold text-xl sm:text-2xl transition-transform duration-300 hover:rotate-[-5deg] flex-shrink-0"
           >
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600 dark:from-primary dark:to-green-400">
               Julio
             </span>
           </Link>
           
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden lg:flex space-x-6 xl:space-x-8">
             {NavItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className={`text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-green-400 transition-colors ${
+                className={`text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-green-400 transition-colors whitespace-nowrap ${
                   activeSection === item.href.replace("#", "") 
                     ? "text-primary dark:text-green-400 font-medium" 
                     : ""
@@ -81,7 +82,7 @@ export default function Header() {
             <Button
               variant="ghost"
               size="icon"
-              className="md:hidden"
+              className="lg:hidden"
               aria-label="Menu"
               onClick={() => setMobileMenuOpen(true)}
             >
