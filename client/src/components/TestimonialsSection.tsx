@@ -1,8 +1,15 @@
-import { useState } from "react";
+
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, StarHalf } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 type Testimonial = {
   id: number;
@@ -54,8 +61,6 @@ const testimonials: Testimonial[] = [
 ];
 
 export default function TestimonialsSection() {
-  const [activeIndex, setActiveIndex] = useState(0);
-
   return (
     <section id="testimonials" className="py-20 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-green-500/5 dark:from-primary/10 dark:to-green-500/10"></div>
@@ -74,68 +79,61 @@ export default function TestimonialsSection() {
           </p>
         </motion.div>
         
-        <div className="testimonial-slider relative">
-          <div className="flex flex-nowrap overflow-x-auto gap-6 pb-8 scroller">
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="w-full max-w-5xl mx-auto"
+        >
+          <CarouselContent className="-ml-2 md:-ml-4">
             {testimonials.map((testimonial, index) => (
-              <motion.div 
-                key={testimonial.id}
-                className="flex-shrink-0 w-full md:w-[400px]"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true, margin: "-100px" }}
-              >
-                <Card className="h-full">
-                  <CardContent className="p-8">
-                    <div className="flex items-center mb-6">
-                      <div className="mr-4">
-                        <div className="w-12 h-12 bg-gray-200 dark:bg-dark-card rounded-full overflow-hidden">
-                          <img 
-                            src={testimonial.image} 
-                            alt={testimonial.name} 
-                            className="w-full h-full object-cover"
-                          />
+              <CarouselItem key={testimonial.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/2">
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                >
+                  <Card className="h-full">
+                    <CardContent className="p-8">
+                      <div className="flex items-center mb-6">
+                        <div className="mr-4">
+                          <div className="w-12 h-12 bg-gray-200 dark:bg-dark-card rounded-full overflow-hidden">
+                            <img 
+                              src={testimonial.image} 
+                              alt={testimonial.name} 
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        </div>
+                        <div>
+                          <h3 className="font-bold">{testimonial.name}</h3>
+                          <p className="text-sm text-gray-600 dark:text-gray-400">{testimonial.role}, {testimonial.company}</p>
                         </div>
                       </div>
-                      <div>
-                        <h3 className="font-bold">{testimonial.name}</h3>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">{testimonial.role}, {testimonial.company}</p>
+                      <div className="mb-6">
+                        <div className="flex text-yellow-400 mb-2">
+                          {[...Array(Math.floor(testimonial.rating))].map((_, i) => (
+                            <Star key={i} className="h-4 w-4 fill-current" />
+                          ))}
+                          {testimonial.rating % 1 !== 0 && (
+                            <StarHalf className="h-4 w-4 fill-current" />
+                          )}
+                        </div>
+                        <p className="italic text-gray-600 dark:text-gray-300">
+                          "{testimonial.text}"
+                        </p>
                       </div>
-                    </div>
-                    <div className="mb-6">
-                      <div className="flex text-yellow-400 mb-2">
-                        {[...Array(Math.floor(testimonial.rating))].map((_, i) => (
-                          <Star key={i} className="h-4 w-4 fill-current" />
-                        ))}
-                        {testimonial.rating % 1 !== 0 && (
-                          <StarHalf className="h-4 w-4 fill-current" />
-                        )}
-                      </div>
-                      <p className="italic text-gray-600 dark:text-gray-300">
-                        "{testimonial.text}"
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              </CarouselItem>
             ))}
-          </div>
-          
-          <div className="flex justify-center mt-8 space-x-2">
-            {testimonials.map((_, index) => (
-              <button
-                key={index}
-                className={`w-3 h-3 rounded-full transition-all ${
-                  activeIndex === index 
-                    ? "bg-primary opacity-100" 
-                    : "bg-gray-300 dark:bg-gray-600 opacity-60"
-                }`}
-                onClick={() => setActiveIndex(index)}
-                aria-label={`Go to testimonial ${index + 1}`}
-              />
-            ))}
-          </div>
-        </div>
+          </CarouselContent>
+          <CarouselPrevious className="hidden md:flex" />
+          <CarouselNext className="hidden md:flex" />
+        </Carousel>
       </div>
     </section>
   );
