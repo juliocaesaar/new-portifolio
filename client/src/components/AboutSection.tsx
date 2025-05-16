@@ -25,7 +25,7 @@ export default function AboutSection() {
                 className="rounded-2xl shadow-xl w-full max-w-md mx-auto"
               />
               <motion.div 
-                className="absolute -bottom-5 -left-5 bg-white dark:bg-dark-card p-4 rounded-xl shadow-lg"
+                className="absolute -bottom-5 -left-5 bg-white dark:bg-[hsl(var(--dark-card))] p-4 rounded-xl shadow-lg"
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.2, duration: 0.5 }}

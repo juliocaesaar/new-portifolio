@@ -86,7 +86,7 @@ export default function HeroSection() {
               }}
             />
             <motion.div 
-              className="absolute -bottom-6 -right-6 bg-white dark:bg-dark-card p-3 rounded-xl shadow-lg"
+              className="absolute -bottom-6 -right-6 bg-white dark:bg-[hsl(var(--dark-card))] p-3 rounded-xl shadow-lg"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.5 }}

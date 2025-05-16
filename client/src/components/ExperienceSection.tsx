@@ -149,7 +149,7 @@ export default function ExperienceSection() {
                           <h3 className="text-xl font-bold">{exp.role}</h3>
                           <p className="text-primary dark:text-green-400">{exp.company}</p>
                         </div>
-                        <Badge variant="outline" className={`bg-${exp.color}-100 dark:bg-${exp.color}-900/30 text-${exp.color}-800 dark:text-${exp.color}-300 border-0`}>
+                        <Badge variant="outline" className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300 border-0">
                           {exp.period}
                         </Badge>
                       </div>

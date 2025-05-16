@@ -33,7 +33,7 @@ export default function Footer() {
               Building exceptional software solutions with a focus on user experience, performance, and maintainability.
             </p>
           </div>
-          
+
           <div className="flex flex-wrap gap-8">
             <div>
               <h3 className="font-semibold text-gray-900 dark:text-white mb-4">Navigation</h3>
@@ -85,7 +85,7 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
-            
+
             <div>
               <h3 className="font-semibold text-gray-900 dark:text-white mb-4">Connect</h3>
               <ul className="space-y-2">
@@ -100,37 +100,40 @@ export default function Footer() {
                 <li>
                   <a 
                     href="#" 
-                    className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-green-400 transition-colors flex items-center"
+                    className="bg-white dark:bg-[hsl(var(--dark-card))] p-3 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-dark-border"
+                    aria-label="LinkedIn Profile"
                   >
-                    <Linkedin className="mr-2 h-4 w-4" /> LinkedIn
+                    <Linkedin className="h-5 w-5 text-gray-700 dark:text-gray-300" />
                   </a>
                 </li>
                 <li>
                   <a 
                     href="#" 
-                    className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-green-400 transition-colors flex items-center"
+                    className="bg-white dark:bg-[hsl(var(--dark-card))] p-3 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-dark-border"
+                    aria-label="Twitter Profile"
                   >
-                    <Twitter className="mr-2 h-4 w-4" /> Twitter
+                    <Twitter className="h-5 w-5 text-gray-700 dark:text-gray-300" />
                   </a>
                 </li>
                 <li>
                   <a 
                     href="#" 
-                    className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-green-400 transition-colors flex items-center"
+                    className="bg-white dark:bg-[hsl(var(--dark-card))] p-3 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-dark-border"
+                    aria-label="Dribbble Profile"
                   >
-                    <Dribbble className="mr-2 h-4 w-4" /> Dribbble
+                    <Dribbble className="h-5 w-5 text-gray-700 dark:text-gray-300" />
                   </a>
                 </li>
               </ul>
             </div>
           </div>
         </div>
-        
+
         <div className="border-t border-gray-200 dark:border-dark-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-600 dark:text-gray-400 text-sm">
             &copy; {new Date().getFullYear()} Julio. All rights reserved.
           </p>
-          
+
           <div className="flex space-x-4 mt-4 md:mt-0">
             <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-green-400 transition-colors text-sm">Privacy Policy</a>
             <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-green-400 transition-colors text-sm">Terms of Service</a>
