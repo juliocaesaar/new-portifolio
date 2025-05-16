@@ -30,13 +30,13 @@ export default function HeroSection() {
     <section className="relative overflow-hidden py-20 lg:py-32">
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-full h-full bg-pattern-light dark:bg-pattern-dark"></div>
-      
+
       {/* Animated blobs */}
       <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/10 dark:bg-primary/5 rounded-full filter blur-3xl animate-blob"></div>
       <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-green-500/10 dark:bg-green-500/5 rounded-full filter blur-3xl animate-blob animation-delay-2000"></div>
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-500/10 dark:bg-purple-500/5 rounded-full filter blur-3xl animate-blob animation-delay-4000"></div>
-      
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden relative z-10">
         <motion.div 
           className="flex flex-col lg:flex-row items-center justify-between gap-12"
           variants={containerVariants}
@@ -70,7 +70,7 @@ export default function HeroSection() {
               </Button>
             </div>
           </motion.div>
-          
+
           <motion.div className="lg:w-1/2 relative" variants={childVariants}>
             <motion.img 
               src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80" 
@@ -116,7 +116,7 @@ export default function HeroSection() {
             </motion.div>
           </motion.div>
         </motion.div>
-        
+
         <motion.div 
           className="mt-24 flex flex-wrap justify-center gap-8 md:gap-12"
           initial={{ opacity: 0, y: 20 }}

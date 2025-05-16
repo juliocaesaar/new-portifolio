@@ -77,7 +77,7 @@ export default function ExperienceSection() {
             Throughout my career, I've worn many hats and gained valuable experience across various domains of software development.
           </p>
         </motion.div>
-        
+
         <div className="flex flex-col md:flex-row gap-8">
           <motion.div 
             className="md:w-1/3"
@@ -90,7 +90,7 @@ export default function ExperienceSection() {
               <Card>
                 <CardContent className="pt-6">
                   <h3 className="font-semibold text-xl mb-6">Key Expertise</h3>
-                  
+
                   <div className="space-y-6">
                     {skills.map((skill, index) => (
                       <div key={index}>
@@ -102,7 +102,7 @@ export default function ExperienceSection() {
                       </div>
                     ))}
                   </div>
-                  
+
                   <div className="mt-8">
                     <a 
                       href="#" 
@@ -129,7 +129,7 @@ export default function ExperienceSection() {
               </Card>
             </div>
           </motion.div>
-          
+
           <div className="md:w-2/3">
             <div className="relative border-l-2 border-gray-200 dark:border-dark-border pl-8 ml-4">
               {experiences.map((exp, index) => (
@@ -153,11 +153,11 @@ export default function ExperienceSection() {
                           {exp.period}
                         </Badge>
                       </div>
-                      
+
                       <p className="text-gray-700 dark:text-gray-300 mb-4">
                         {exp.description}
                       </p>
-                      
+
                       <div className="flex flex-wrap gap-2">
                         {exp.technologies.map((tech, techIndex) => (
                           <Badge key={techIndex} variant="secondary">

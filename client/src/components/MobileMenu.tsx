@@ -1,4 +1,5 @@
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Dialog, Transition } from "@headlessui/react";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
