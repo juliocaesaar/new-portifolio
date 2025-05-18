@@ -1,8 +1,18 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
+import axios from "axios";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Example external API call
+  app.get("/api/external", async (req, res) => {
+    try {
+      const response = await axios.get("https://jsonplaceholder.typicode.com/posts/1");
+      res.json(response.data);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch external data" });
+    }
+  });
   // Contact form submission endpoint
   app.post("/api/contact", async (req, res) => {
     try {
