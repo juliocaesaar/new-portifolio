@@ -4,6 +4,24 @@ import { storage } from "./storage";
 import axios from "axios";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // GitHub repositories endpoint
+  app.get("/api/github-repos", async (_req, res) => {
+    try {
+      const response = await axios.get('https://api.github.com/users/juliovt-07/repos');
+      const repos = response.data.map((repo: any) => ({
+        name: repo.name,
+        description: repo.description,
+        stars: repo.stargazers_count,
+        forks: repo.forks_count,
+        url: repo.html_url,
+        language: repo.language
+      }));
+      res.json(repos);
+    } catch (error) {
+      console.error('Error fetching GitHub repos:', error);
+      res.status(500).json({ error: 'Failed to fetch GitHub repositories' });
+    }
+  });
   // Example external API call
   app.get("/api/external", async (req, res) => {
     try {
