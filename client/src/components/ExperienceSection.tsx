@@ -30,27 +30,43 @@ const skills: Skill[] = [
 const experiences: Experience[] = [
   {
     role: "Full Stack Developer",
-    company: "Freelancer",
-    period: "2023 - Present",
-    description: "Development of web and mobile solutions focusing on modern technologies and best practices. Leading projects from conception to deployment.",
-    technologies: ["React", "Node.js", "React Native", "TypeScript", "REST APIs"],
+    company: "StartGov",
+    period: "julho 2023 - setembro 2023",
+    description: "Desenvolvimento de soluções web completas para o setor governamental.",
+    technologies: ["React", "Node.js", "TypeScript", "REST APIs"],
     color: "blue"
   },
   {
-    role: "Mobile Developer",
-    company: "Independent Projects",
-    period: "2022 - 2023",
-    description: "Created innovative mobile applications with focus on user experience and performance optimization.",
-    technologies: ["React Native", "JavaScript", "Mobile Design", "API Integration"],
+    role: "Desenvolvedor Front-end",
+    company: "Overdrive Softwares e Consultoria",
+    period: "dezembro 2021 - julho 2023",
+    description: "Desenvolvimento de interfaces web modernas e responsivas para sistemas empresariais.",
+    technologies: ["React", "JavaScript", "CSS", "UI/UX"],
     color: "green"
   },
   {
-    role: "Software Developer",
-    company: "Personal Projects",
-    period: "2021 - 2022",
-    description: "Built full-stack applications and contributed to open source projects. Focus on web technologies and modern development practices.",
-    technologies: ["JavaScript", "React", "Node.js", "Git", "Agile"],
+    role: "Full Stack Developer",
+    company: "C Agri - Investimentos",
+    period: "setembro 2022 - junho 2023",
+    description: "Desenvolvimento de soluções tecnológicas para o setor agrícola.",
+    technologies: ["Full Stack", "JavaScript", "React", "Node.js"],
     color: "purple"
+  },
+  {
+    role: "Desenvolvedor Fluig",
+    company: "Purinutre",
+    period: "março 2022 - novembro 2022",
+    description: "Desenvolvimento de Processos e Eventos Personalizados dentro do Sistema Fluig Totvs.",
+    technologies: ["Fluig", "TOTVS", "JavaScript", "Workflows"],
+    color: "orange"
+  },
+  {
+    role: "Desenvolvedor",
+    company: "Decole Digital",
+    period: "julho 2021 - setembro 2022",
+    description: "Desenvolvimento de soluções digitais e websites.",
+    technologies: ["Web Development", "JavaScript", "HTML/CSS"],
+    color: "yellow"
   }
 ];
 
