@@ -20,7 +20,11 @@ export default function OpenSourceSection() {
   useEffect(() => {
     fetch('/api/github-repos')
       .then(response => response.json())
-      .then(data => setRepos(data))
+      .then(data => {
+        // Shuffle array and get first 4 items
+        const shuffled = [...data].sort(() => 0.5 - Math.random());
+        setRepos(shuffled.slice(0, 4));
+      })
       .catch(error => console.error('Error fetching repos:', error));
   }, []);
 
