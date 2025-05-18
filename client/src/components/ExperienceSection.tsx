@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Card, CardContent } from "@/components/ui/card";
@@ -21,43 +22,35 @@ type Experience = {
 const skills: Skill[] = [
   { name: "Frontend Development", percentage: 95 },
   { name: "Backend Development", percentage: 90 },
-  { name: "UI/UX Design", percentage: 85 },
-  { name: "DevOps", percentage: 80 },
-  { name: "Project Management", percentage: 85 }
+  { name: "Mobile Development", percentage: 85 },
+  { name: "Project Leadership", percentage: 80 },
+  { name: "Solution Architecture", percentage: 85 }
 ];
 
 const experiences: Experience[] = [
   {
-    role: "Lead Software Engineer",
-    company: "TechInnovate Solutions",
-    period: "2020 - Present",
-    description: "Leading the development of a SaaS platform for enterprise document management. Responsible for architecture design, team management, and ensuring code quality across the full stack.",
-    technologies: ["React", "Node.js", "PostgreSQL", "AWS", "Team Management"],
+    role: "Full Stack Developer",
+    company: "Freelancer",
+    period: "2023 - Present",
+    description: "Development of web and mobile solutions focusing on modern technologies and best practices. Leading projects from conception to deployment.",
+    technologies: ["React", "Node.js", "React Native", "TypeScript", "REST APIs"],
     color: "blue"
   },
   {
-    role: "Full Stack Developer",
-    company: "E-Market Solutions",
-    period: "2018 - 2020",
-    description: "Developed and maintained multiple e-commerce platforms, implementing payment gateways, inventory management systems, and responsive UIs. Improved site performance by 40%.",
-    technologies: ["JavaScript", "PHP", "MySQL", "Docker", "REST APIs"],
+    role: "Mobile Developer",
+    company: "Independent Projects",
+    period: "2022 - 2023",
+    description: "Created innovative mobile applications with focus on user experience and performance optimization.",
+    technologies: ["React Native", "JavaScript", "Mobile Design", "API Integration"],
     color: "green"
   },
   {
-    role: "UI/UX Designer & Frontend Developer",
-    company: "Creative Digital Agency",
-    period: "2016 - 2018",
-    description: "Designed and implemented user interfaces for various client websites and applications. Created wireframes, prototypes, and translated designs into responsive frontends.",
-    technologies: ["Figma", "HTML/CSS", "JavaScript", "User Testing", "Accessibility"],
+    role: "Software Developer",
+    company: "Personal Projects",
+    period: "2021 - 2022",
+    description: "Built full-stack applications and contributed to open source projects. Focus on web technologies and modern development practices.",
+    technologies: ["JavaScript", "React", "Node.js", "Git", "Agile"],
     color: "purple"
-  },
-  {
-    role: "Junior Web Developer",
-    company: "TechStart Inc.",
-    period: "2014 - 2016",
-    description: "Started my professional journey building and maintaining websites for small businesses. Focused on front-end development while learning backend technologies.",
-    technologies: ["HTML/CSS", "jQuery", "WordPress", "Responsive Design"],
-    color: "gray"
   }
 ];
 
@@ -74,7 +67,7 @@ export default function ExperienceSection() {
         >
           <SectionHeading className="text-center mx-auto mb-4">Professional Experience</SectionHeading>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Throughout my career, I've worn many hats and gained valuable experience across various domains of software development.
+            Throughout my career, I've focused on delivering high-quality software solutions and staying updated with modern technologies.
           </p>
         </motion.div>
 
@@ -105,10 +98,10 @@ export default function ExperienceSection() {
 
                   <div className="mt-8">
                     <a 
-                      href="#" 
+                      href="#contact" 
                       className="inline-flex items-center text-primary dark:text-green-400 font-medium"
                     >
-                      Download CV
+                      Contact Me
                       <svg 
                         className="ml-2 h-4 w-4" 
                         xmlns="http://www.w3.org/2000/svg" 
@@ -119,9 +112,8 @@ export default function ExperienceSection() {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       >
-                        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"></path>
-                        <polyline points="7 10 12 15 17 10"></polyline>
-                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5l7 7-7 7"></path>
                       </svg>
                     </a>
                   </div>
