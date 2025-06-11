@@ -1,0 +1,222 @@
+{
+  "header": {
+    "about": "Sobre",
+    "experience": "Experiência",
+    "projects": "Projetos",
+    "open_source": "Código Aberto",
+    "testimonials": "Depoimentos",
+    "contact": "Contato",
+    "skills": "Habilidades"
+  },
+  "hero": {
+    "title": "Olá, eu sou Julio",
+    "subtitle": "Desenvolvedor Full Stack",
+    "description": "Eu construo soluções de software robustas do conceito à implantação. Minha experiência abrange frontend, backend, design de UI/UX e DevOps — criando experiências digitais excepcionais que resolvem problemas reais.",
+    "contact_button": "Entre em contato",
+    "view_work_button": "Ver meu trabalho",
+    "role": "Desenvolvedor Full-Stack",
+    "experience_years": "5+ anos de experiência"
+  },
+  "about": {
+    "heading": "Sobre Mim",
+    "paragraph1": "Sempre fui focado em criar bons layouts, agradáveis e com boas usabilidades. Minha jornada começou como um frontend apaixonado por criar interfaces.",
+    "paragraph2": "Após essa fase, descobri uma grande afeição em construir aplicações reais e completas, o que me levou a me tornar um desenvolvedor full-stack. Tenho uma paixão por criar soluções inovadoras que geram impacto real.",
+    "technical_skills": {
+      "heading": "Habilidades Técnicas",
+      "items": [
+        "Desenvolvimento Full-Stack (React, Node.js, etc.)",
+        "Design e Gerenciamento de Banco de Dados",
+        "Design e Implementação de UI/UX",
+        "Design e Integração de API"
+      ]
+    },
+    "industry_experience": {
+      "heading": "Experiência na Indústria",
+      "items": [
+        "Desenvolvimento de Produtos SaaS",
+        "Plataformas de E-commerce",
+        "Websites e Plataformas Corporativas"
+      ]
+    },
+    "contact_button": "Vamos trabalhar juntos"
+  },
+  "experience": {
+    "heading": "Experiência Profissional",
+    "subtitle": "Ao longo da minha carreira, foquei em entregar soluções de software de alta qualidade e me manter atualizado com tecnologias modernas.",
+    "skills": {
+      "heading": "Principais Habilidades",
+      "items": [
+        { "name": "Desenvolvimento Frontend", "percentage": 95 },
+        { "name": "Desenvolvimento Backend", "percentage": 90 },
+        { "name": "Liderança de Projetos", "percentage": 80 },
+        { "name": "Designer UI/UX", "percentage": 80 }
+      ]
+    },
+    "experiences": {
+      "heading": "Experiências",
+      "items": [
+        {
+          "role": "Product Manager/DevOps",
+          "company": "Windi Software House",
+          "period": "março de 2025 - atualmente",
+          "description": "Gerenciamento de produtos e infraestrutura DevOps para soluções de software.",
+          "technologies": ["React", "Node.js", "Docker", "GitHub Actions", "CI/CD", "PWA", "TypeScript", "IA Assistants"],
+          "color": "purple"
+        },
+        {
+          "role": "Desenvolvedor Full Stack",
+          "company": "StartGov",
+          "period": "julho 2023 - setembro 2023",
+          "description": "Desenvolvimento de soluções web completas para o setor governamental.",
+          "technologies": ["React", "Node.js", "TypeScript", "REST APIs"],
+          "color": "blue"
+        },
+        {
+          "role": "Desenvolvedor Front-end",
+          "company": "Overdrive Softwares e Consultoria",
+          "period": "dezembro 2021 - julho 2023",
+          "description": "Desenvolvimento de interfaces web modernas e responsivas para sistemas empresariais.",
+          "technologies": ["React", "JavaScript", "CSS", "UI/UX"],
+          "color": "green"
+        },
+        {
+          "role": "Desenvolvedor Full Stack",
+          "company": "C Agri - Investimentos",
+          "period": "setembro 2022 - junho 2023",
+          "description": "Desenvolvimento de soluções tecnológicas para o setor agrícola.",
+          "technologies": ["Full Stack", "JavaScript", "React", "Node.js"],
+          "color": "purple"
+        },
+        {
+          "role": "Desenvolvedor Fluig",
+          "company": "Purinutre",
+          "period": "março 2022 - novembro 2022",
+          "description": "Desenvolvimento de Processos e Eventos Personalizados dentro do Sistema Fluig Totvs.",
+          "technologies": ["Fluig", "TOTVS", "JavaScript", "Workflows"],
+          "color": "orange"
+        },
+        {
+          "role": "Developer",
+          "company": "Decole Digital",
+          "period": "julho 2021 - setembro 2022",
+          "description": "Desenvolvimento de soluções digitais e websites.",
+          "technologies": ["Web Development", "JavaScript", "HTML/CSS"],
+          "color": "yellow"
+        }
+      ]
+    },
+    "contact_button": "Entre em contato",
+    "see_more": "ver mais",
+    "see_less": "ver menos"
+  },
+  "projects": {
+    "heading": "Projetos em Destaque",
+    "subtitle": "Uma seleção de projetos que demonstram minhas habilidades em diferentes domínios e tecnologias.",
+    "items": [
+      {
+        "title": "Grupo Topazio",
+        "category": "Website Institucional",
+        "description": "Website institucional para o Grupo Topazio.",
+        "image": "/assets/grupotopazio.png",
+        "technologies": ["Vue 2", "CSS 3"],
+        "caseStudyUrl": "#",
+        "githubUrl": null,
+        "externalUrl": "https://grupotopazio.com/",
+        "badgeColor": "blue"
+      },
+      {
+        "title": "SIGMA Laboratório e Centro Médico",
+        "category": "Landing Page",
+        "description": "Landing page para o SIGMA Laboratório e Centro Médico.",
+        "image": "/assets/sigma.png",
+        "technologies": ["React"],
+        "caseStudyUrl": "#",
+        "githubUrl": null,
+        "externalUrl": "https://www.labsigma.com.br/",
+        "badgeColor": "green"
+      },
+      {
+        "title": "Nova Aliança El Shaday",
+        "category": "Website Institucional",
+        "description": "Site informativo da igreja nova aliança El Shaday.",
+        "image": "/assets/elshaday.png",
+        "technologies": ["Vue 2", "Laravel"],
+        "caseStudyUrl": "#",
+        "githubUrl": null,
+        "externalUrl": "https://www.naelshaday.com.br/",
+        "badgeColor": "purple"
+      },
+      {
+        "title": "ClusterVet",
+        "category": "Plataforma",
+        "description": "Contribuição em projeto de hub veterinário.",
+        "image": "/assets/clustervet.png",
+        "technologies": ["Nuxt"],
+        "caseStudyUrl": "#",
+        "githubUrl": null,
+        "externalUrl": "https://clustervet.com/",
+        "badgeColor": "orange"
+      },
+      {
+        "title": "Money Plus (BMP)",
+        "category": "Plataforma Whitelabel",
+        "description": "Contribuição na parte frontend da plataforma whitelabel do banco BMP.",
+        "image": "/assets/bmp.png",
+        "technologies": ["Nuxt", "Tailwind CSS", "Vue 2"],
+        "caseStudyUrl": "#",
+        "githubUrl": null,
+        "externalUrl": "https://moneyp.com.br/",
+        "badgeColor": "red"
+      },
+      {
+        "title": "Cellesti AI",
+        "category": "Projeto",
+        "description": "HotSite para pré venda de uma Criptomoeda baseada em Etherium.",
+        "image": "/assets/cellesti.png",
+        "technologies": ["HTML 5", "CSS 3", "jQuery"],
+        "caseStudyUrl": "#",
+        "githubUrl": null,
+        "externalUrl": "https://cellesti.ai/",
+        "badgeColor": "yellow"
+      }
+    ],
+    "view_case_study": "Ver Estudo de Caso",
+    "view_all_button": "Ver Todos os Projetos"
+  },
+  "open_source": {
+    "heading": "Projetos de Código Aberto",
+    "subtitle": "Confira meus projetos e contribuições de código aberto no GitHub.",
+    "no_description": "Nenhuma descrição disponível"
+  },
+  "footer": {
+    "software_engineer": "Engenheiro de Software",
+    "description": "Construindo soluções de software excepcionais com foco em experiência do usuário, performance e manutenibilidade.",
+    "navigation": "Navegação",
+    "about": "Sobre",
+    "experience": "Experiência",
+    "projects": "Projetos",
+    "testimonials": "Depoimentos",
+    "contact": "Contato",
+    "connect": "Conectar",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "twitter": "Twitter",
+    "dribbble": "Dribbble",
+    "all_rights_reserved": "Todos os direitos reservados.",
+    "privacy_policy": "Política de Privacidade",
+    "terms_of_service": "Termos de Serviço"
+  },
+  "contact": {
+    "heading": "Entre em Contato",
+    "name": "Nome",
+    "email": "Email",
+    "message": "Mensagem",
+    "send_message": "Enviar Mensagem",
+    "location_heading": "Localização",
+    "availability_heading": "Disponibilidade",
+    "connect_heading": "Conecte-se comigo",
+    "description": "Estou disponível para novos projetos e colaborações. Se você tem uma ideia ou precisa de ajuda com desenvolvimento de software, entre em contato!",
+    "location_text": "Imperatriz, MA, Brasil (Remoto Disponível)",
+    "availability_text": "Disponível para novos projetos"
+  }
+}

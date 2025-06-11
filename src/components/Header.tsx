@@ -6,20 +6,25 @@ import { Button } from "@/components/ui/button";
 import MobileMenu from "@/components/MobileMenu";
 import { scrollToElement } from "@/lib/utils";
 import { useScrollSpy } from "@/hooks/use-scroll-spy";
+import { useLanguage } from "@/context/LanguageContext";
+import { useTranslation } from "@/hooks/useTranslation";
 
 const NavItems = [
-  { name: "About", href: "#about" },
-  { name: "Experience", href: "#experience" },
-  { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
-  { name: "Open Source", href: "#open-source" },
-  { name: "Testimonials", href: "#testimonials" },
-  { name: "Contact", href: "#contact" },
+  { name: "about", href: "#about" },
+  { name: "experience", href: "#experience" },
+  { name: "skills", href: "#skills" },
+  { name: "projects", href: "#projects" },
+  { name: "open_source", href: "#open-source" },
+  { name: "testimonials", href: "#testimonials" },
+  { name: "contact", href: "#contact" },
 ];
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { language, setLanguage } = useLanguage();
+  const { t } = useTranslation();
+
   const activeSection = useScrollSpy(
     NavItems.map((item) => item.href.replace("#", "")),
     { threshold: 0.5 },
@@ -40,6 +45,10 @@ export default function Header() {
   ) => {
     e.preventDefault();
     scrollToElement(href.replace("#", ""));
+  };
+
+  const toggleLanguage = () => {
+    setLanguage(language === 'pt' ? 'en' : 'pt');
   };
 
   return (
@@ -73,12 +82,19 @@ export default function Header() {
                     : ""
                 }`}
               >
-                {item.name}
+                {t(`header.${item.name}`)}
               </a>
             ))}
           </nav>
 
           <div className="flex items-center space-x-4">
+            {/* Botão de tradução */}
+            <button
+              className="px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-green-400 transition-colors"
+              onClick={toggleLanguage}
+            >
+              {language.toUpperCase()}
+            </button>
             <ThemeToggle />
             <Button
               variant="ghost"

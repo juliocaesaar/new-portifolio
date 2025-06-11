@@ -32,7 +32,7 @@ const testimonials = [
 export default function TestimonialsSection() {
   return (
     <section id="testimonials" className="py-20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-green-500/5 dark:from-primary/10 dark:to-green-500/10"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 dark:from-primary/10"></div>
 
       <div className="container mx-auto relative z-10">
         <motion.div 

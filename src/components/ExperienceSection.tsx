@@ -1,9 +1,10 @@
-
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
+import { useTranslation } from "@/hooks/useTranslation";
+import { useState } from "react"; // Importar useState
 
 type Skill = {
   name: string;
@@ -19,76 +20,56 @@ type Experience = {
   color: string;
 };
 
-const skills: Skill[] = [
-  { name: "Frontend Development", percentage: 95 },
-  { name: "Backend Development", percentage: 90 },
-  { name: "Mobile Development", percentage: 85 },
-  { name: "Project Leadership", percentage: 80 },
-  { name: "Solution Architecture", percentage: 85 }
-];
-
-const experiences: Experience[] = [
-  {
-    role: "Full Stack Developer",
-    company: "StartGov",
-    period: "julho 2023 - setembro 2023",
-    description: "Desenvolvimento de soluções web completas para o setor governamental.",
-    technologies: ["React", "Node.js", "TypeScript", "REST APIs"],
-    color: "blue"
-  },
-  {
-    role: "Desenvolvedor Front-end",
-    company: "Overdrive Softwares e Consultoria",
-    period: "dezembro 2021 - julho 2023",
-    description: "Desenvolvimento de interfaces web modernas e responsivas para sistemas empresariais.",
-    technologies: ["React", "JavaScript", "CSS", "UI/UX"],
-    color: "green"
-  },
-  {
-    role: "Full Stack Developer",
-    company: "C Agri - Investimentos",
-    period: "setembro 2022 - junho 2023",
-    description: "Desenvolvimento de soluções tecnológicas para o setor agrícola.",
-    technologies: ["Full Stack", "JavaScript", "React", "Node.js"],
-    color: "purple"
-  },
-  {
-    role: "Desenvolvedor Fluig",
-    company: "Purinutre",
-    period: "março 2022 - novembro 2022",
-    description: "Desenvolvimento de Processos e Eventos Personalizados dentro do Sistema Fluig Totvs.",
-    technologies: ["Fluig", "TOTVS", "JavaScript", "Workflows"],
-    color: "orange"
-  },
-  {
-    role: "Desenvolvedor",
-    company: "Decole Digital",
-    period: "julho 2021 - setembro 2022",
-    description: "Desenvolvimento de soluções digitais e websites.",
-    technologies: ["Web Development", "JavaScript", "HTML/CSS"],
-    color: "yellow"
-  }
-];
-
 export default function ExperienceSection() {
+  const { t, currentTranslations } = useTranslation();
+
+  // Safely access the nested arrays
+  const skills: Skill[] = currentTranslations?.experience?.skills?.items || [];
+  const experiences: Experience[] = currentTranslations?.experience?.experiences?.items || [];
+
+  // Estado para controlar a expansão das descrições individuais
+  const [expandedExperiences, setExpandedExperiences] = useState<number[]>([]);
+  // Estado para controlar a expansão da linha do tempo completa
+  const [isTimelineExpanded, setIsTimelineExpanded] = useState(false);
+
+  const toggleExpandDescription = (index: number) => {
+    setExpandedExperiences(prev =>
+      prev.includes(index) ? prev.filter(i => i !== index) : [...prev, index]
+    );
+  };
+
+  const toggleTimelineExpand = () => {
+    setIsTimelineExpanded(prev => !prev);
+  };
+
+  // Número de experiências a serem exibidas por padrão
+  const initialExperiencesToShow = 3; // Ajustar conforme necessário
+
+  // Experiências a serem exibidas com base no estado de expansão da linha do tempo
+  const displayedExperiences = isTimelineExpanded
+    ? experiences
+    : experiences.slice(0, initialExperiencesToShow);
+
+  const showToggleTimelineButton = experiences.length > initialExperiencesToShow;
+
   return (
     <section id="experience" className="py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <SectionHeading className="text-center mx-auto mb-4">Professional Experience</SectionHeading>
+          <SectionHeading className="text-center mx-auto mb-4">{t('experience.heading')}</SectionHeading>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Throughout my career, I've focused on delivering high-quality software solutions and staying updated with modern technologies.
+            {t('experience.subtitle')}
           </p>
         </motion.div>
 
         <div className="flex flex-col md:flex-row gap-8">
-          <motion.div 
+          <motion.div
             className="md:w-1/3"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -98,7 +79,7 @@ export default function ExperienceSection() {
             <div className="sticky top-24">
               <Card>
                 <CardContent className="pt-6">
-                  <h3 className="font-semibold text-xl mb-6">Key Expertise</h3>
+                  <h3 className="font-semibold text-xl mb-6">{t('experience.skills.heading')}</h3>
 
                   <div className="space-y-6">
                     {skills.map((skill, index) => (
@@ -113,16 +94,16 @@ export default function ExperienceSection() {
                   </div>
 
                   <div className="mt-8">
-                    <a 
-                      href="#contact" 
+                    <a
+                      href="#contact"
                       className="inline-flex items-center text-primary dark:text-green-400 font-medium"
                     >
-                      Contact Me
-                      <svg 
-                        className="ml-2 h-4 w-4" 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        viewBox="0 0 24 24" 
-                        fill="none" 
+                      {t('experience.contact_button')}
+                      <svg
+                        className="ml-2 h-4 w-4"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
                         stroke="currentColor"
                         strokeWidth="2"
                         strokeLinecap="round"
@@ -140,9 +121,9 @@ export default function ExperienceSection() {
 
           <div className="md:w-2/3">
             <div className="relative border-l-2 border-gray-200 dark:border-dark-border pl-8 ml-4">
-              {experiences.map((exp, index) => (
-                <motion.div 
-                  key={index} 
+              {displayedExperiences.map((exp, index) => (
+                <motion.div
+                  key={index}
                   className="mb-12 last:mb-0"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -163,7 +144,18 @@ export default function ExperienceSection() {
                       </div>
 
                       <p className="text-gray-700 dark:text-gray-300 mb-4">
-                        {exp.description}
+                        {/* Limitar a descrição e adicionar botão "ver mais/menos" */}
+                        {expandedExperiences.includes(index)
+                          ? exp.description
+                          : `${exp.description.substring(0, 50)}...`} {/* Limite de caracteres, ajustar conforme necessário */}
+                        {exp.description.length > 50 && ( // Mostrar botão apenas se a descrição for longa
+                          <button
+                            onClick={() => toggleExpandDescription(index)}
+                            className="text-primary dark:text-green-400 font-medium ml-1"
+                          >
+                            {expandedExperiences.includes(index) ? t('experience.see_less') : t('experience.see_more')}
+                          </button>
+                        )}
                       </p>
 
                       <div className="flex flex-wrap gap-2">
@@ -177,6 +169,16 @@ export default function ExperienceSection() {
                   </Card>
                 </motion.div>
               ))}
+              {showToggleTimelineButton && (
+                <div className="text-center mt-8">
+                  <button
+                    onClick={toggleTimelineExpand}
+                    className="text-primary dark:text-green-400 font-medium"
+                  >
+                    {isTimelineExpanded ? t('experience.see_less') : t('experience.see_more')}
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>

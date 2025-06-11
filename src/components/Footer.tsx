@@ -1,8 +1,10 @@
 import { Link } from "wouter";
 import { scrollToElement } from "@/lib/utils";
 import { Github, Linkedin, Twitter, Dribbble } from "lucide-react";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export default function Footer() {
+  const { t } = useTranslation();
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     scrollToElement(href.replace("#", ""));
@@ -27,16 +29,16 @@ export default function Footer() {
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600 dark:from-primary dark:to-green-400">
                 Julio
               </span>
-              <span className="ml-2 text-gray-600 dark:text-gray-400 font-normal">Software Engineer</span>
+              <span className="ml-2 text-gray-600 dark:text-gray-400 font-normal">{t('footer.software_engineer')}</span>
             </Link>
             <p className="text-gray-600 dark:text-gray-400 max-w-md">
-              Building exceptional software solutions with a focus on user experience, performance, and maintainability.
+              {t('footer.description')}
             </p>
           </div>
 
           <div className="flex flex-wrap gap-8">
             <div>
-              <h3 className="font-semibold text-gray-900 dark:text-white mb-4">Navigation</h3>
+              <h3 className="font-semibold text-gray-900 dark:text-white mb-4">{t('footer.navigation')}</h3>
               <ul className="space-y-2">
                 <li>
                   <a 
@@ -44,7 +46,7 @@ export default function Footer() {
                     onClick={(e) => handleNavClick(e, "#about")}
                     className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-green-400 transition-colors"
                   >
-                    About
+                    {t('footer.about')}
                   </a>
                 </li>
                 <li>
@@ -53,7 +55,7 @@ export default function Footer() {
                     onClick={(e) => handleNavClick(e, "#experience")}
                     className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-green-400 transition-colors"
                   >
-                    Experience
+                    {t('footer.experience')}
                   </a>
                 </li>
                 <li>
@@ -62,7 +64,7 @@ export default function Footer() {
                     onClick={(e) => handleNavClick(e, "#projects")}
                     className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-green-400 transition-colors"
                   >
-                    Projects
+                    {t('footer.projects')}
                   </a>
                 </li>
                 <li>
@@ -71,7 +73,7 @@ export default function Footer() {
                     onClick={(e) => handleNavClick(e, "#testimonials")}
                     className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-green-400 transition-colors"
                   >
-                    Testimonials
+                    {t('footer.testimonials')}
                   </a>
                 </li>
                 <li>
@@ -80,21 +82,21 @@ export default function Footer() {
                     onClick={(e) => handleNavClick(e, "#contact")}
                     className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-green-400 transition-colors"
                   >
-                    Contact
+                    {t('footer.contact')}
                   </a>
                 </li>
               </ul>
             </div>
 
             <div>
-              <h3 className="font-semibold text-gray-900 dark:text-white mb-4">Connect</h3>
+              <h3 className="font-semibold text-gray-900 dark:text-white mb-4">{t('footer.connect')}</h3>
               <ul className="space-y-2">
                 <li>
                   <a 
                     href="#" 
                     className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-green-400 transition-colors flex items-center"
                   >
-                    <Github className="mr-2 h-4 w-4" /> GitHub
+                    <Github className="mr-2 h-4 w-4" /> {t('footer.github')}
                   </a>
                 </li>
                 <li>
@@ -102,7 +104,7 @@ export default function Footer() {
                     href="#" 
                     className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-green-400 transition-colors flex items-center"
                   >
-                    <Linkedin className="mr-2 h-4 w-4" /> LinkedIn
+                    <Linkedin className="mr-2 h-4 w-4" /> {t('footer.linkedin')}
                   </a>
                 </li>
                 <li>
@@ -110,7 +112,7 @@ export default function Footer() {
                     href="#" 
                     className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-green-400 transition-colors flex items-center"
                   >
-                    <Twitter className="mr-2 h-4 w-4" /> Twitter
+                    <Twitter className="mr-2 h-4 w-4" /> {t('footer.twitter')}
                   </a>
                 </li>
                 <li>
@@ -118,7 +120,7 @@ export default function Footer() {
                     href="#" 
                     className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-green-400 transition-colors flex items-center"
                   >
-                    <Dribbble className="mr-2 h-4 w-4" /> Dribbble
+                    <Dribbble className="mr-2 h-4 w-4" /> {t('footer.dribbble')}
                   </a>
                 </li>
               </ul>
@@ -128,12 +130,12 @@ export default function Footer() {
 
         <div className="border-t border-gray-200 dark:border-dark-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-600 dark:text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} Julio. All rights reserved.
+            &copy; {new Date().getFullYear()} Julio. {t('footer.all_rights_reserved')}
           </p>
 
           <div className="flex space-x-4 mt-4 md:mt-0">
-            <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-green-400 transition-colors text-sm">Privacy Policy</a>
-            <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-green-400 transition-colors text-sm">Terms of Service</a>
+            <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-green-400 transition-colors text-sm">{t('footer.privacy_policy')}</a>
+            <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-green-400 transition-colors text-sm">{t('footer.terms_of_service')}</a>
           </div>
         </div>
       </div>
