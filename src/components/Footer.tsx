@@ -24,7 +24,7 @@ export default function Footer() {
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600 dark:from-primary dark:to-green-400">
                 {'<Julio/>'}
               </span>
-              <span className="text-gray-600 dark:text-gray-400 font-normal">{t('footer.software_engineer')}</span>
+              <span className="text-gray-600 dark:text-gray-400 font-normal">Develop</span>
             </Link>
             <p className="text-gray-600 dark:text-gray-400 max-w-md">
               {t('footer.description')}

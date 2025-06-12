@@ -14,8 +14,6 @@ const NavItems = [
   { name: "header.experience", href: "#experience" },
   { name: "header.skills", href: "#skills" },
   { name: "header.projects", href: "#projects" },
-  { name: "header.open_source", href: "#open-source" },
-  { name: "header.testimonials", href: "#testimonials" },
   { name: "header.contact", href: "#contact" },
 ];
 
@@ -68,6 +66,7 @@ export default function Header() {
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600 dark:from-primary dark:to-green-400">
               {'<Julio/>'}
             </span>
+            <span className="text-gray-600 dark:text-gray-400 font-normal">Develop</span>
           </Link>
 
           <nav className="hidden lg:flex space-x-6 xl:space-x-8">
