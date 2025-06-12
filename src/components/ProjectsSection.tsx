@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react"; // Importar useRef
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -24,6 +24,7 @@ export default function ProjectsSection() {
   const [showAllProjects, setShowAllProjects] = useState(false);
   const [randomProjects, setRandomProjects] = useState<Project[]>([]);
   const [shuffledProjects, setShuffledProjects] = useState<Project[]>([]);
+  const buttonRef = useRef<HTMLDivElement>(null); // Criar a referência
 
   // Safely access the nested array
   const projects: Project[] = currentTranslations?.projects?.items || [];
@@ -35,6 +36,14 @@ export default function ProjectsSection() {
       setRandomProjects(shuffled.slice(0, 3));
     }
   }, [projects]);
+
+  // Adicionar useEffect para scroll
+  useEffect(() => {
+    if (!showAllProjects && buttonRef.current) {
+      buttonRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [showAllProjects]);
+
 
   const displayedProjects = showAllProjects ? shuffledProjects : randomProjects;
 
@@ -119,6 +128,7 @@ export default function ProjectsSection() {
 
         {projects.length > 4 && (
           <motion.div
+            ref={buttonRef} // Atribuir a referência ao div pai do botão
             className="text-center mt-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
