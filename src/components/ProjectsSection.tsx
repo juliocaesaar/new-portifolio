@@ -69,6 +69,7 @@ export default function ProjectsSection() {
                     src={project.image.replace('.png', '.webp')}
                     alt={project.title}
                     className="w-full h-full object-cover object-top"
+                    loading="lazy" // Adicionado lazy loading
                   />
                 </div>
                 <CardContent className="p-6">
