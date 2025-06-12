@@ -2,8 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.logo span {
+  font-family: "Jersey 25 Charted", sans-serif;
+}
+
 :root {
-  --background: 0 0% 100%;
+  --background: 0 0% 98%;
   --foreground: 20 14.3% 4.1%;
   --muted: 60 4.8% 95.9%;
   --muted-foreground: 25 5.3% 44.7%;
@@ -13,7 +21,7 @@
   --card-foreground: 20 14.3% 4.1%;
   --border: 20 5.9% 90%;
   --input: 20 5.9% 90%;
-  --primary: 207 90% 54%;
+  --primary: 142 76% 36%;
   --primary-foreground: 211 100% 99%;
   --secondary: 60 4.8% 95.9%;
   --secondary-foreground: 24 9.8% 10%;

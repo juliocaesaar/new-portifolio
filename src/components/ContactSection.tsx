@@ -72,7 +72,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 alt text-center">
+    <section id="contact" className="relative py-20 alt text-center">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
         <div className="flex flex-col lg:flex-row gap-16 w-full max-w-3xl">
           <motion.div

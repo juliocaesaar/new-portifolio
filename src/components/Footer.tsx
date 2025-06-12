@@ -1,7 +1,8 @@
 import { Link } from "wouter";
 import { scrollToElement } from "@/lib/utils";
-import { Github, Linkedin, Twitter, Dribbble } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 import { useTranslation } from "@/hooks/useTranslation";
+import AnimatedBackground from "@/components/AnimatedBackground";
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -12,24 +13,18 @@ export default function Footer() {
 
   return (
     <footer className="relative overflow-hidden bg-white dark:bg-[hsl(var(--dark-bg))] border-t border-gray-200 dark:border-[hsl(var(--dark-border))] py-12">
-      {/* Background decoration */}
-      <div className="absolute top-0 left-0 w-full h-full bg-pattern-light dark:bg-pattern-dark opacity-30"></div>
-
-      {/* Animated blobs */}
-      <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/10 dark:bg-[hsl(var(--dark-primary))]/10 rounded-full filter blur-3xl animate-blob"></div>
-      <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-green-500/10 dark:bg-green-500/10 rounded-full filter blur-3xl animate-blob animation-delay-2000"></div>
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-500/10 dark:bg-purple-500/10 rounded-full filter blur-3xl animate-blob animation-delay-4000"></div>
+      <AnimatedBackground />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-0">
           <div className="mb-8 md:mb-0">
-            <Link 
-              href="/" 
-              className="logo font-bold text-xl text-gray-900 dark:text-white flex items-center mb-4"
+            <Link
+              href="/"
+              className="logo text-xl text-gray-900 dark:text-white flex items-center mb-4"
             >
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600 dark:from-primary dark:to-green-400">
-                Julio
+                {'<Julio/>'}
               </span>
-              <span className="ml-2 text-gray-600 dark:text-gray-400 font-normal">{t('footer.software_engineer')}</span>
+              <span className="text-gray-600 dark:text-gray-400 font-normal">{t('footer.software_engineer')}</span>
             </Link>
             <p className="text-gray-600 dark:text-gray-400 max-w-md">
               {t('footer.description')}
@@ -69,15 +64,6 @@ export default function Footer() {
                 </li>
                 <li>
                   <a 
-                    href="#testimonials" 
-                    onClick={(e) => handleNavClick(e, "#testimonials")}
-                    className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-green-400 transition-colors"
-                  >
-                    {t('footer.testimonials')}
-                  </a>
-                </li>
-                <li>
-                  <a 
                     href="#contact" 
                     onClick={(e) => handleNavClick(e, "#contact")}
                     className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-green-400 transition-colors"
@@ -92,35 +78,23 @@ export default function Footer() {
               <h3 className="font-semibold text-gray-900 dark:text-white mb-4">{t('footer.connect')}</h3>
               <ul className="space-y-2">
                 <li>
-                  <a 
-                    href="#" 
+                  <a
+                    href="https://github.com/juliovt-07"
                     className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-green-400 transition-colors flex items-center"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <Github className="mr-2 h-4 w-4" /> {t('footer.github')}
                   </a>
                 </li>
                 <li>
-                  <a 
-                    href="#" 
+                  <a
+                    href="https://www.linkedin.com/in/juliocesaar/"
                     className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-green-400 transition-colors flex items-center"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <Linkedin className="mr-2 h-4 w-4" /> {t('footer.linkedin')}
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="#" 
-                    className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-green-400 transition-colors flex items-center"
-                  >
-                    <Twitter className="mr-2 h-4 w-4" /> {t('footer.twitter')}
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="#" 
-                    className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-green-400 transition-colors flex items-center"
-                  >
-                    <Dribbble className="mr-2 h-4 w-4" /> {t('footer.dribbble')}
                   </a>
                 </li>
               </ul>
@@ -128,14 +102,12 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-200 dark:border-dark-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-gray-200 dark:border-dark-border mt-12 pt-8 flex flex-col md:flex-row justify-center items-center text-center">
           <p className="text-gray-600 dark:text-gray-400 text-sm">
             &copy; {new Date().getFullYear()} Julio. {t('footer.all_rights_reserved')}
           </p>
 
           <div className="flex space-x-4 mt-4 md:mt-0">
-            <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-green-400 transition-colors text-sm">{t('footer.privacy_policy')}</a>
-            <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-green-400 transition-colors text-sm">{t('footer.terms_of_service')}</a>
           </div>
         </div>
       </div>

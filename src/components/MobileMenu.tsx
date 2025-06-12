@@ -4,6 +4,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { scrollToElement } from "@/lib/utils";
+import { useTranslation } from "@/hooks/useTranslation";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -12,6 +13,8 @@ interface MobileMenuProps {
 }
 
 export default function MobileMenu({ isOpen, onClose, items }: MobileMenuProps) {
+  const { t } = useTranslation();
+
   const handleNavClick = (href: string) => {
     scrollToElement(href.replace("#", ""));
     onClose();
@@ -59,7 +62,7 @@ export default function MobileMenu({ isOpen, onClose, items }: MobileMenuProps) 
                       className="block w-full text-left py-3 px-6 hover:bg-muted transition-colors"
                       onClick={() => handleNavClick(item.href)}
                     >
-                      {item.name}
+                      {t(item.name)}
                     </button>
                   ))}
                 </div>

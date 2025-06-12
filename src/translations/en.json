@@ -15,7 +15,8 @@
     "contact_button": "Get in touch",
     "view_work_button": "View my work",
     "role": "Full-Stack Developer",
-    "experience_years": "5+ years experience"
+    "experience_years": "5+ years experience",
+    "trustedByCompaniesWorldwide": "Trusted by companies worldwide"
   },
   "about": {
     "heading": "About Me",
@@ -24,10 +25,9 @@
     "technical_skills": {
       "heading": "Technical Skills",
       "items": [
-        "Full-Stack Development (React, Node.js, etc.)",
-        "Database Design & Management",
-        "UI/UX Design & Implementation",
-        "API Design & Integration"
+        "Web Full-Stack Development",
+        "Data Modeling and Management",
+        "API Integration"
       ]
     },
     "industry_experience": {
@@ -38,7 +38,9 @@
         "Corporate Websites & Platforms"
       ]
     },
-    "contact_button": "Let's work together"
+    "contact_button": "Let's work together",
+    "companies_heading": "Companies I've worked with",
+    "trusted_by_companies": "Trusted by companies worldwide"
   },
   "experience": {
     "heading": "Professional Experience",
@@ -56,7 +58,7 @@
       "heading": "Experiences",
       "items": [
         {
-          "role": "Product Manager/DevOps",
+          "role": "Full Stack Developer",
           "company": "Windi Software House",
           "period": "March 2025 - Present",
           "description": "Product management and DevOps infrastructure for software solutions.",
@@ -68,24 +70,24 @@
           "company": "StartGov",
           "period": "July 2023 - September 2023",
           "description": "Development of complete web solutions for the government sector.",
-          "technologies": ["React", "Node.js", "TypeScript", "REST APIs"],
-          "color": "blue"
+          "technologies": ["Vue", "Laravel", "BootstrapVue", "MySql", "REST APIs"],
+          "color": "yellow"
         },
         {
           "role": "Frontend Developer",
           "company": "Overdrive Softwares e Consultoria",
           "period": "December 2021 - July 2023",
           "description": "Development of modern and responsive web interfaces for enterprise systems.",
-          "technologies": ["React", "JavaScript", "CSS", "UI/UX"],
-          "color": "green"
+          "technologies": ["Vue", "Nuxt", "Firebase", "JavaScript", "Tailwind", "UI/UX"],
+          "color": "red"
         },
         {
           "role": "Full Stack Developer",
           "company": "C Agri - Investimentos",
           "period": "September 2022 - June 2023",
           "description": "Development of technological solutions for the agricultural sector.",
-          "technologies": ["Full Stack", "JavaScript", "React", "Node.js"],
-          "color": "purple"
+          "technologies": ["Vue", "Node.js", "Express", "Tailwind", "MongoDb"],
+          "color": "white"
         },
         {
           "role": "Fluig Developer",
@@ -96,12 +98,20 @@
           "color": "orange"
         },
         {
-          "role": "Developer",
+          "role": "Freelancer Developer",
           "company": "Decole Digital",
           "period": "July 2021 - September 2022",
           "description": "Development of digital solutions and websites.",
-          "technologies": ["Web Development", "JavaScript", "HTML/CSS"],
-          "color": "yellow"
+          "technologies": ["Vue", "Css", "JavaScript", "HTML/CSS"],
+          "color": "blue"
+        },
+        {
+          "role": "Frontend Developer and UI/UX Designer",
+          "company": "InBolso",
+          "period": "July 2020 - October 2020",
+          "description": "Fintech startup for collections and protests",
+          "technologies": ["Vue", "Css", "JavaScript", "Figma", "Framer"],
+          "color": "green"
         }
       ]
     },
@@ -115,73 +125,96 @@
     "items": [
       {
         "title": "Grupo Topazio",
-        "category": "Institutional Website",
+        "category": "Institutional Site",
         "description": "Institutional website for Grupo Topazio.",
-        "image": "/assets/grupotopazio.png",
+        "image": "/assets/projects/grupotopazio.png",
         "technologies": ["Vue 2", "CSS 3"],
         "caseStudyUrl": "#",
         "githubUrl": null,
         "externalUrl": "https://grupotopazio.com/",
-        "badgeColor": "blue"
+        "badgeColor": "green"
       },
       {
         "title": "SIGMA Laboratório e Centro Médico",
         "category": "Landing Page",
         "description": "Landing page for SIGMA Laboratório e Centro Médico.",
-        "image": "/assets/sigma.png",
+        "image": "/assets/projects/sigma.png",
         "technologies": ["React"],
         "caseStudyUrl": "#",
         "githubUrl": null,
         "externalUrl": "https://www.labsigma.com.br/",
-        "badgeColor": "green"
+        "badgeColor": "orange"
       },
       {
         "title": "Nova Aliança El Shaday",
-        "category": "Institutional Website",
+        "category": "Institutional Site",
         "description": "Informational website for the Nova Aliança El Shaday church.",
-        "image": "/assets/elshaday.png",
+        "image": "/assets/projects/elshaday.png",
         "technologies": ["Vue 2", "Laravel"],
         "caseStudyUrl": "#",
         "githubUrl": null,
         "externalUrl": "https://www.naelshaday.com.br/",
-        "badgeColor": "purple"
+        "badgeColor": "blue"
       },
       {
         "title": "ClusterVet",
         "category": "Platform",
         "description": "Contribution to a veterinary hub project.",
-        "image": "/assets/clustervet.png",
+        "image": "/assets/projects/clustervet.png",
         "technologies": ["Nuxt"],
         "caseStudyUrl": "#",
         "githubUrl": null,
         "externalUrl": "https://clustervet.com/",
-        "badgeColor": "orange"
+        "badgeColor": "green"
       },
       {
         "title": "Money Plus (BMP)",
         "category": "Whitelabel Platform",
         "description": "Contribution to the frontend part of the BMP bank whitelabel platform.",
-        "image": "/assets/bmp.png",
+        "image": "/assets/projects/bmp.png",
         "technologies": ["Nuxt", "Tailwind CSS", "Vue 2"],
         "caseStudyUrl": "#",
         "githubUrl": null,
         "externalUrl": "https://moneyp.com.br/",
-        "badgeColor": "red"
+        "badgeColor": "purple"
       },
       {
         "title": "Cellesti AI",
-        "category": "Project",
+        "category": "HotSite",
         "description": "HotSite for pre-sale of an Ethereum-based Cryptocurrency.",
-        "image": "/assets/cellesti.png",
+        "image": "/assets/projects/cellesti.png",
         "technologies": ["HTML 5", "CSS 3", "jQuery"],
         "caseStudyUrl": "#",
         "githubUrl": null,
         "externalUrl": "https://cellesti.ai/",
-        "badgeColor": "yellow"
+        "badgeColor": "blue"
+      },
+      {
+        "title": "Aggio Delivery",
+        "category": "Landing Page",
+        "description": "Landing page for a delivery platform with cashback",
+        "image": "/assets/projects/aggio-delivery.png",
+        "technologies": ["Vue", "Nuxt", "BootstrapVue"],
+        "caseStudyUrl": "#",
+        "githubUrl": null,
+        "externalUrl": null,
+        "badgeColor": "red"
+      },
+      {
+        "title": "Casa do Rolamento",
+        "category": "HotSite",
+        "description": "HotSite created for the company Casa do Rolamento.",
+        "image": "/assets/projects/casa-do-rolamento.png",
+        "technologies": ["Html", "CSS", "JavaScript"],
+        "caseStudyUrl": "#",
+        "githubUrl": null,
+        "externalUrl": null,
+        "badgeColor": "blue"
       }
     ],
     "view_case_study": "View Case Study",
-    "view_all_button": "View All Projects"
+    "view_more_button": "View More Projects",
+    "view_less_button": "View Less Projects"
   },
   "open_source": {
     "heading": "Open Source Projects",
@@ -202,9 +235,7 @@
     "linkedin": "LinkedIn",
     "twitter": "Twitter",
     "dribbble": "Dribbble",
-    "all_rights_reserved": "All rights reserved.",
-    "privacy_policy": "Privacy Policy",
-    "terms_of_service": "Terms of Service"
+    "all_rights_reserved": "All rights reserved."
   },
   "contact": {
     "heading": "Get in Touch",

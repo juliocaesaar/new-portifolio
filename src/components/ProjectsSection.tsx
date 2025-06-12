@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -20,12 +21,25 @@ type Project = {
 
 export default function ProjectsSection() {
   const { t, currentTranslations } = useTranslation();
+  const [showAllProjects, setShowAllProjects] = useState(false);
+  const [randomProjects, setRandomProjects] = useState<Project[]>([]);
+  const [shuffledProjects, setShuffledProjects] = useState<Project[]>([]);
 
   // Safely access the nested array
   const projects: Project[] = currentTranslations?.projects?.items || [];
 
+  useEffect(() => {
+    if (projects.length > 0) {
+      const shuffled = [...projects].sort(() => 0.5 - Math.random());
+      setShuffledProjects(shuffled);
+      setRandomProjects(shuffled.slice(0, 3));
+    }
+  }, [projects]);
+
+  const displayedProjects = showAllProjects ? shuffledProjects : randomProjects;
+
   return (
-    <section id="projects" className="py-20 alt">
+    <section id="projects" className="relative py-20 alt">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
@@ -41,7 +55,7 @@ export default function ProjectsSection() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {displayedProjects.map((project, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
@@ -54,35 +68,28 @@ export default function ProjectsSection() {
                   <img
                     src={project.image.replace('.png', '.webp')}
                     alt={project.title}
-                    className="w-full h-full object-cover object-top group-hover:object-bottom transition-[object-position] duration-1000" // Efeito de rolagem para baixo
+                    className="w-full h-full object-cover object-top"
                   />
                 </div>
                 <CardContent className="p-6">
-                  <div className="flex justify-between items-start mb-4">
-                    <h3 className="font-bold text-xl">{project.title}</h3>
-                    <Badge variant="outline" className={`bg-${project.badgeColor}-100 dark:bg-${project.badgeColor}-900/30 text-${project.badgeColor}-800 dark:text-${project.badgeColor}-300 border-0`}>
+                  <div className="flex justify-between items-center mb-4">
+                    <h3 className="font-bold text-xl max-w-[70%] whitespace-nowrap overflow-hidden text-ellipsis">{project.title}</h3>
+                    <Badge variant="outline" className={`bg-${project.badgeColor}-100 dark:bg-${project.badgeColor}-900/30 text-${project.badgeColor}-800 dark:text-${project.badgeColor}-300 border-0 text-[9px] whitespace-nowrap overflow-hidden text-ellipsis`}>
                       {project.category}
                     </Badge>
                   </div>
                   <p className="text-gray-600 dark:text-gray-400 mb-4">
                     {project.description}
                   </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-2 mb-4 items-center">
+                  <div className="flex gap-2 overflow-hidden">
                     {project.technologies.map((tech, techIndex) => (
-                      <Badge key={techIndex} variant="secondary" className="text-xs">
+                      <Badge key={techIndex} variant="secondary" className="text-[10px] whitespace-nowrap overflow-hidden text-ellipsis">
                         {tech}
                       </Badge>
                     ))}
                   </div>
-                  <div className="flex justify-between items-center">
-                    <a
-                      href={project.caseStudyUrl}
-                      className="text-primary dark:text-green-400 font-medium flex items-center"
-                    >
-                      {t('projects.view_case_study')}
-                      <ArrowRight className="ml-1 h-4 w-4" />
-                    </a>
-                    <div className="flex space-x-2">
+                    <div className="flex space-x-2 ml-auto">
                       {project.githubUrl && (
                         <a
                           href={project.githubUrl}
@@ -109,17 +116,24 @@ export default function ProjectsSection() {
           ))}
         </div>
 
-        <motion.div
-          className="text-center mt-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          <Button variant="outline" className="gap-2">
-            {t('projects.view_all_button')} <ArrowRight className="h-4 w-4" />
-          </Button>
-        </motion.div>
+        {projects.length > 4 && (
+          <motion.div
+            className="text-center mt-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <Button
+              variant="outline"
+              className="gap-2"
+              onClick={() => setShowAllProjects(!showAllProjects)}
+            >
+              {showAllProjects ? t('projects.view_less_button') : t('projects.view_more_button')}
+              {showAllProjects ? null : <ArrowRight className="h-4 w-4" />}
+            </Button>
+          </motion.div>
+        )}
       </div>
     </section>
   );

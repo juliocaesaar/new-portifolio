@@ -16,7 +16,7 @@ function Router() {
 
 function App() {
   return (
-    <ThemeProvider defaultTheme="light" storageKey="julio-theme">
+    <ThemeProvider defaultTheme="dark" storageKey="julio-theme">
       <TooltipProvider>
         <Toaster />
         <Router />

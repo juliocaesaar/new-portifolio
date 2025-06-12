@@ -16,7 +16,7 @@ export default function AboutSection() {
 
 
   return (
-    <section id="about" className="py-20 alt">
+    <section id="about" className="relative py-20 alt">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-16 items-center">
           <motion.div

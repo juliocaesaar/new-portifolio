@@ -82,9 +82,13 @@ export default function OpenSourceSection() {
     );
   }
 
+  // Não renderizar a seção se não houver repositórios para exibir após o carregamento
+  if (!loading && !error && displayedRepos.length === 0) {
+    return null;
+  }
 
   return (
-    <section id="open-source" className="py-20 alt">
+    <section id="open-source" className="relative py-20 alt">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"

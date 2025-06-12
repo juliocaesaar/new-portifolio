@@ -7,6 +7,7 @@ import ProjectsSection from "@/components/ProjectsSection";
 import OpenSourceSection from "@/components/OpenSourceSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import AnimatedBackground from "@/components/AnimatedBackground";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 
 export default function Home() {
@@ -21,10 +22,22 @@ export default function Home() {
       
       <main>
         <HeroSection />
-        <AboutSection />
-        <ExperienceSection />
-        <ProjectsSection />
-        <OpenSourceSection />
+        <div className="relative">
+          <AnimatedBackground />
+          <AboutSection />
+        </div>
+        <div className="relative">
+          <AnimatedBackground />
+          <ExperienceSection />
+        </div>
+        <div className="relative">
+          <AnimatedBackground />
+          <ProjectsSection />
+        </div>
+        <div className="relative">
+          <AnimatedBackground />
+          <OpenSourceSection />
+        </div>
         <ContactSection />
       </main>
       

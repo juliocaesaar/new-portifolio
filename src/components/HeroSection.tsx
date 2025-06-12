@@ -3,6 +3,36 @@ import { ArrowRight, Briefcase, Music, Home, MessageSquare } from "lucide-react"
 import { Button } from "@/components/ui/button";
 import { scrollToElement } from "@/lib/utils";
 import { useTranslation } from "@/hooks/useTranslation";
+import AnimatedBackground from "@/components/AnimatedBackground";
+
+// Importar logos das empresas
+import aggioLogo from "/public/assets/companies/aggio.png";
+import clusterLogo from "/public/assets/companies/cluster.png";
+import decoleLogo from "/public/assets/companies/decole.png";
+import inbolsoLogo from "/public/assets/companies/inbolso.png";
+import isiLogo from "/public/assets/companies/isi.png";
+import overdriveLogo from "/public/assets/companies/overdrive.png";
+import purinutreLogo from "/public/assets/companies/purinutre.png";
+import scmLogo from "/public/assets/companies/scm.png";
+import startgovLogo from "/public/assets/companies/startgov.png";
+import topazioLogo from "/public/assets/companies/topazio.png";
+import cellestiLogo from "/public/assets/companies/cellesti.png";
+import cagriLogo from "/public/assets/companies/cagri.png";
+
+const companyLogos = [
+  { name: "Aggio", src: aggioLogo },
+  { name: "Cluster", src: clusterLogo },
+  { name: "Decole", src: decoleLogo },
+  { name: "Inbolso", src: inbolsoLogo },
+  { name: "ISI", src: isiLogo },
+  { name: "Overdrive", src: overdriveLogo },
+  { name: "Purinutre", src: purinutreLogo },
+  { name: "SCM", src: scmLogo },
+  { name: "StartGov", src: startgovLogo },
+  { name: "Topazio", src: topazioLogo },
+  { name: "Cellesti", src: cellestiLogo },
+  { name: "Cagri", src: cagriLogo },
+];
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -31,14 +61,7 @@ export default function HeroSection() {
 
   return (
     <section className="relative overflow-hidden py-20 lg:py-32">
-      {/* Background decoration */}
-      <div className="absolute top-0 left-0 w-full h-full bg-pattern-light dark:bg-pattern-dark"></div>
-
-      {/* Animated blobs */}
-      <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/10 dark:bg-primary/5 rounded-full filter blur-3xl animate-blob"></div>
-      <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-green-500/10 dark:bg-green-500/5 rounded-full filter blur-3xl animate-blob animation-delay-2000"></div>
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-500/10 dark:bg-purple-500/5 rounded-full filter blur-3xl animate-blob animation-delay-4000"></div>
-
+      <AnimatedBackground />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden relative z-10">
         <motion.div
           className="flex flex-col lg:flex-row items-center justify-between gap-12"
@@ -89,7 +112,7 @@ export default function HeroSection() {
               }}
             />
             <motion.div
-              className="absolute -bottom-6 -right-6 bg-white dark:bg-[hsl(var(--dark-card))] p-3 rounded-xl shadow-lg"
+              className="absolute -bottom-6 -right-2 bg-white dark:bg-[hsl(var(--dark-card))] p-3 rounded-xl shadow-lg"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.5 }}
@@ -126,25 +149,25 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.5 }}
         >
-          <p className="text-sm text-gray-500 dark:text-gray-400 w-full text-center mb-6">Trusted by companies worldwide</p>
-          <div className="flex items-center justify-center rounded-full w-12 h-12 bg-gray-100 dark:bg-gray-800">
-            <Briefcase className="h-6 w-6 text-gray-500 dark:text-gray-400" />
-          </div>
-          <div className="flex items-center justify-center rounded-full w-12 h-12 bg-gray-100 dark:bg-gray-800">
-            <Music className="h-6 w-6 text-gray-500 dark:text-gray-400" />
-          </div>
-          <div className="flex items-center justify-center rounded-full w-12 h-12 bg-gray-100 dark:text-gray-400">
-            <Home className="h-6 w-6 text-gray-500 dark:text-gray-400" />
-          </div>
-          <div className="flex items-center justify-center rounded-full w-12 h-12 bg-gray-100 dark:bg-gray-800">
-            <MessageSquare className="h-6 w-6 text-gray-500 dark:text-gray-400" />
-          </div>
-          <div className="flex items-center justify-center rounded-full w-12 h-12 bg-gray-100 dark:bg-gray-800">
-            <svg viewBox="0 0 24 24" className="h-6 w-6 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-              <rect x="2" y="9" width="4" height="12"></rect>
-              <circle cx="4" cy="4" r="2"></circle>
-            </svg>
+          <p className="text-sm text-gray-500 dark:text-gray-400 w-full text-center mb-6">{t('hero.trustedByCompaniesWorldwide')}</p>
+          {/* Seção de logos das empresas */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 justify-items-center items-center">
+            {companyLogos.map((logo, index) => (
+              <motion.div
+                key={index}
+                className="w-32 h-20 flex items-center justify-center p-3 bg-gray-300/80 dark:bg-gray-800/20 rounded-lg backdrop-blur-md"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
+                viewport={{ once: true, margin: "-50px" }}
+              >
+                <img
+                  src={logo.src}
+                  alt={`${logo.name} Logo`}
+                  className="max-h-full max-w-full object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                />
+              </motion.div>
+            ))}
           </div>
         </motion.div>
       </div>

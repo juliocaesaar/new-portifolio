@@ -10,13 +10,13 @@ import { useLanguage } from "@/context/LanguageContext";
 import { useTranslation } from "@/hooks/useTranslation";
 
 const NavItems = [
-  { name: "about", href: "#about" },
-  { name: "experience", href: "#experience" },
-  { name: "skills", href: "#skills" },
-  { name: "projects", href: "#projects" },
-  { name: "open_source", href: "#open-source" },
-  { name: "testimonials", href: "#testimonials" },
-  { name: "contact", href: "#contact" },
+  { name: "header.about", href: "#about" },
+  { name: "header.experience", href: "#experience" },
+  { name: "header.skills", href: "#skills" },
+  { name: "header.projects", href: "#projects" },
+  { name: "header.open_source", href: "#open-source" },
+  { name: "header.testimonials", href: "#testimonials" },
+  { name: "header.contact", href: "#contact" },
 ];
 
 export default function Header() {
@@ -63,10 +63,10 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           <Link
             href="/"
-            className="logo font-bold text-xl sm:text-2xl transition-transform duration-300 hover:rotate-[-5deg] flex-shrink-0"
+            className="logo text-xl sm:text-2xl transition-transform duration-300 hover:rotate-[-5deg] flex-shrink-0"
           >
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600 dark:from-primary dark:to-green-400">
-              Julio
+              {'<Julio/>'}
             </span>
           </Link>
 
@@ -82,7 +82,7 @@ export default function Header() {
                     : ""
                 }`}
               >
-                {t(`header.${item.name}`)}
+                {t(item.name)}
               </a>
             ))}
           </nav>
