@@ -37,13 +37,6 @@ export default function ProjectsSection() {
     }
   }, [projects]);
 
-  // Adicionar useEffect para scroll
-  useEffect(() => {
-    if (!showAllProjects && buttonRef.current) {
-      buttonRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, [showAllProjects]);
-
 
   const displayedProjects = showAllProjects ? shuffledProjects : randomProjects;
 
