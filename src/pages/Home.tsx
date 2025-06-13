@@ -14,9 +14,7 @@ const Footer = lazy(() => import("@/components/Footer"));
 
 export default function Home() {
   // Set up intersection observer to animate elements when they come into view
-  useEffect(() => {
-    useIntersectionObserver();
-  }, []);
+  useIntersectionObserver();
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
