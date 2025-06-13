@@ -9,9 +9,9 @@
     "skills": "Skills"
   },
   "hero": {
-    "title": "Hello, I'm Julio",
-    "subtitle": "Full Stack Developer",
-    "description": "I build robust software solutions from concept to deployment. My experience spans frontend, backend, UI/UX design, and DevOps — creating exceptional digital experiences that solve real problems.",
+    "title": "Hello, I'm Julio, Website and Web Solutions Developer",
+    "subtitle": "Full Stack Developer and Website Creation Specialist",
+    "description": "I build robust software solutions from concept to deployment, including creating institutional websites, high-converting landing pages, hotsites, online forms, and linktrees. My experience spans frontend, backend, UI/UX design, and DevOps — creating exceptional digital experiences that solve real problems and boost your business.",
     "contact_button": "Get in touch",
     "view_work_button": "View my work",
     "role": "Full-Stack Developer",
@@ -20,12 +20,13 @@
   },
   "about": {
     "heading": "About Me",
-    "paragraph1": "My software development journey began with a focus on creating intuitive and attractive user interfaces, valuing good usability in every project.",
-    "paragraph2": "This foundation led me to full-stack development, where I build complete and robust applications. I seek to innovate and create solutions that generate positive impact and solve complex challenges.",
+    "paragraph1": "My software development journey began with a focus on creating intuitive and attractive user interfaces, valuing good usability in every website and web application project.",
+    "paragraph2": "This foundation led me to full-stack development, where I build complete and robust applications, from institutional websites to complex platforms. I seek to innovate and create web solutions that generate positive impact and solve complex challenges for my clients.",
     "technical_skills": {
       "heading": "Technical Skills",
       "items": [
         "Web Full-Stack Development",
+        "Responsive Website Creation",
         "Data Modeling and Management",
         "API Integration"
       ]

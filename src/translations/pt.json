@@ -9,9 +9,9 @@
     "skills": "Habilidades"
   },
   "hero": {
-    "title": "Olá, eu sou Julio",
-    "subtitle": "Desenvolvedor Full Stack",
-    "description": "Desenvolvo soluções de software robustas do conceito à implantação. Minha experiência abrange frontend, backend, design de UI/UX e DevOps — criando experiências digitais excepcionais que resolvem problemas reais.",
+    "title": "Olá, eu sou Julio, Desenvolvedor de Sites e Soluções Web",
+    "subtitle": "Desenvolvedor Full Stack e Especialista em Criação de Sites",
+    "description": "Desenvolvo soluções de software robustas do conceito à implantação, incluindo a criação de sites institucionais, landing pages de alta conversão, hotsites, formulários online e linktrees. Minha experiência abrange frontend, backend, design de UI/UX e DevOps — criando experiências digitais excepcionais que resolvem problemas reais e impulsionam seu negócio.",
     "contact_button": "Entre em contato",
     "view_work_button": "Ver meu trabalho",
     "role": "Desenvolvedor Full-Stack",
@@ -20,12 +20,13 @@
   },
   "about": {
     "heading": "Sobre Mim",
-    "paragraph1": "Minha jornada no desenvolvimento de software começou com foco em criar interfaces de usuário intuitivas e atraentes, valorizando a boa usabilidade em cada projeto.",
-    "paragraph2": "Essa base me levou ao desenvolvimento full-stack, onde construo aplicações completas e robustas. Busco inovar e criar soluções que gerem impacto positivo e resolvam desafios complexos.",
+    "paragraph1": "Minha jornada no desenvolvimento de software começou com foco em criar interfaces de usuário intuitivas e atraentes, valorizando a boa usabilidade em cada projeto de site e aplicação web.",
+    "paragraph2": "Essa base me levou ao desenvolvimento full-stack, onde construo aplicações completas e robustas, desde sites institucionais a plataformas complexas. Busco inovar e criar soluções web que gerem impacto positivo e resolvam desafios complexos para meus clientes.",
     "technical_skills": {
       "heading": "Habilidades Técnicas",
       "items": [
         "Desenvolvimento Web Full-Stack",
+        "Criação de Sites Responsivos",
         "Modelagem e Gerenciamento de Dados",
         "Integração de APIs"
       ]
