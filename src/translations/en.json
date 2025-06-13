@@ -210,6 +210,28 @@
         "githubUrl": null,
         "externalUrl": null,
         "badgeColor": "blue"
+      },
+      {
+        "title": "Explore New Places",
+        "category": "Online Form",
+        "description": "Form for requesting airfare quotes from the Explore travel agency.",
+        "image": "/assets/projects/explore.png",
+        "technologies": ["React", "Tailwind", "REST API"],
+        "caseStudyUrl": "#",
+        "githubUrl": null,
+        "externalUrl": "https://explorenewplaces.vercel.app/",
+        "badgeColor": "yellow"
+      },
+      {
+        "title": "JulioEu",
+        "category": "Portfolio",
+        "description": "Frontend Developer Portfolio.",
+        "image": "/assets/projects/julioeu.png",
+        "technologies": ["Vue", "Nuxt", "CSS"],
+        "caseStudyUrl": "#",
+        "githubUrl": "https://github.com/juliovt-07/portifolio",
+        "externalUrl": "https://julioeu.vercel.app/",
+        "badgeColor": "green"
       }
     ],
     "view_case_study": "View Case Study",
