@@ -79,7 +79,7 @@ export default function Footer() {
               <ul className="space-y-2">
                 <li>
                   <a
-                    href="https://github.com/juliovt-07"
+                    href="https://github.com/juliocaesaar"
                     className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-green-400 transition-colors flex items-center"
                     target="_blank"
                     rel="noopener noreferrer"
