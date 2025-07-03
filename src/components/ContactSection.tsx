@@ -128,7 +128,7 @@ export default function ContactSection() {
               <h3 className="font-semibold text-lg">{t('contact.connect_heading')}</h3>
               <div className="flex space-x-4 justify-center">
                 <a
-                  href="https://github.com/juliovt-07" // Link do GitHub
+                  href="https://github.com/juliocaesaar" // Link do GitHub
                   className="bg-white dark:bg-[hsl(var(--dark-bg))] p-3 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-dark-border"
                   aria-label="GitHub Profile"
                   target="_blank"

@@ -30,7 +30,7 @@ export default function OpenSourceSection() {
   useEffect(() => {
     const fetchRepos = async () => {
       try {
-        const response = await axios.get<Repository[]>('https://api.github.com/users/juliovt-07/repos', {
+        const response = await axios.get<Repository[]>('https://api.github.com/users/juliocaesaar/repos', {
           params: {
             sort: 'updated',
             direction: 'desc',
