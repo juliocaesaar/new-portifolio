@@ -104,7 +104,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-200 dark:border-dark-border mt-12 pt-8 flex flex-col md:flex-row justify-center items-center text-center">
           <p className="text-gray-600 dark:text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} Julio. {t('footer.all_rights_reserved')}
+            &copy; {new Date().getFullYear()} Julio Develop. {t('footer.all_rights_reserved')}
           </p>
 
           <div className="flex space-x-4 mt-4 md:mt-0">
