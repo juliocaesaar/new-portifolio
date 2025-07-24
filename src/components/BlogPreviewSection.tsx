@@ -4,6 +4,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Clock, Calendar } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Skeleton } from "@/components/ui/skeleton";
 
 type BlogPost = {
   id: string;
@@ -50,6 +52,58 @@ const featuredPosts: BlogPost[] = [
 ];
 
 export default function BlogPreviewSection() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1500); // Simulate loading
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return (
+      <section id="blog" className="py-20 alt">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <div>
+              <SectionHeading>Latest Articles</SectionHeading>
+              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl">
+                I regularly write about software development, best practices, and industry trends.
+              </p>
+            </div>
+            <Button variant="outline" className="mt-4 md:mt-0 gap-2">
+              View all articles <ArrowRight className="h-4 w-4" />
+            </Button>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {Array.from({ length: 3 }).map((_, index) => (
+              <Card key={index} className="overflow-hidden h-full flex flex-col">
+                <Skeleton className="h-48 w-full" />
+                <CardContent className="pt-6 pb-4 flex-grow flex flex-col">
+                  <Skeleton className="h-5 w-20 rounded mb-2" />
+                  <Skeleton className="h-6 w-full rounded mb-3" />
+                  <Skeleton className="h-4 w-full rounded mb-2" />
+                  <Skeleton className="h-4 w-5/6 rounded mb-4" />
+                  <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100 dark:border-gray-800">
+                    <Skeleton className="h-5 w-24 rounded" />
+                    <Skeleton className="h-5 w-20 rounded" />
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section id="blog" className="py-20 alt">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">

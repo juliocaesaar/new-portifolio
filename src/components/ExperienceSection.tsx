@@ -4,7 +4,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { useTranslation } from "@/hooks/useTranslation";
-import { useState } from "react"; // Importar useState
+import { useState, useEffect } from "react"; // Importar useState
+import { Skeleton } from "@/components/ui/skeleton";
 
 type Skill = {
   name: string;
@@ -22,6 +23,7 @@ type Experience = {
 
 export default function ExperienceSection() {
   const { t, currentTranslations } = useTranslation();
+  const [loading, setLoading] = useState(true);
 
   // Safely access the nested arrays
   const skills: Skill[] = currentTranslations?.experience?.skills?.items || [];
@@ -31,6 +33,13 @@ export default function ExperienceSection() {
   const [expandedExperiences, setExpandedExperiences] = useState<number[]>([]);
   // Estado para controlar a expansão da linha do tempo completa
   const [isTimelineExpanded, setIsTimelineExpanded] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1500); // Simulate loading
+    return () => clearTimeout(timer);
+  }, []);
 
   const toggleExpandDescription = (index: number) => {
     setExpandedExperiences(prev =>
@@ -51,6 +60,52 @@ export default function ExperienceSection() {
     : experiences.slice(0, initialExperiencesToShow);
 
   const showToggleTimelineButton = experiences.length > initialExperiencesToShow;
+
+  if (loading) {
+    return (
+      <section id="experience" className="relative py-20 z-10 bg-black/20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <SectionHeading className="text-center mx-auto mb-4">{t('experience.heading')}</SectionHeading>
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+              {t('experience.subtitle')}
+            </p>
+          </motion.div>
+          <div className="relative border-l-2 border-gray-200 dark:border-dark-border pl-8 ml-4">
+            {Array.from({ length: 3 }).map((_, index) => (
+              <div key={index} className="mb-12 last:mb-0">
+                <Skeleton className="absolute w-4 h-4 rounded-full -left-[9px] border-4 border-white dark:border-dark-bg" />
+                <Card>
+                  <CardContent className="pt-6">
+                    <div className="flex flex-wrap justify-between items-start mb-4">
+                      <div>
+                        <Skeleton className="h-6 w-48 rounded mb-2" />
+                        <Skeleton className="h-5 w-32 rounded" />
+                      </div>
+                      <Skeleton className="h-5 w-24 rounded" />
+                    </div>
+                    <Skeleton className="h-4 w-full rounded mb-2" />
+                    <Skeleton className="h-4 w-5/6 rounded mb-4" />
+                    <div className="flex flex-wrap gap-2">
+                      <Skeleton className="h-5 w-20 rounded" />
+                      <Skeleton className="h-5 w-24 rounded" />
+                      <Skeleton className="h-5 w-16 rounded" />
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="experience" className="relative py-20 z-10 bg-black/20">

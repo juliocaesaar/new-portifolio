@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Github, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "@/hooks/useTranslation";
+import { Skeleton } from "@/components/ui/skeleton";
 
 type Project = {
   title: string;
@@ -24,21 +25,73 @@ export default function ProjectsSection() {
   const [showAllProjects, setShowAllProjects] = useState(false);
   const [randomProjects, setRandomProjects] = useState<Project[]>([]);
   const [shuffledProjects, setShuffledProjects] = useState<Project[]>([]);
+  const [loading, setLoading] = useState(true);
   const buttonRef = useRef<HTMLDivElement>(null); // Criar a referência
 
   // Safely access the nested array
   const projects: Project[] = currentTranslations?.projects?.items || [];
 
   useEffect(() => {
-    if (projects.length > 0) {
-      const shuffled = [...projects].sort(() => 0.5 - Math.random());
-      setShuffledProjects(shuffled);
-      setRandomProjects(shuffled.slice(0, 3));
-    }
+    const timer = setTimeout(() => {
+      if (projects.length > 0) {
+        const shuffled = [...projects].sort(() => 0.5 - Math.random());
+        setShuffledProjects(shuffled);
+        setRandomProjects(shuffled.slice(0, 3));
+        setLoading(false);
+      }
+    }, 1500); // Simulate loading
+    return () => clearTimeout(timer);
   }, [projects]);
 
 
   const displayedProjects = showAllProjects ? shuffledProjects : randomProjects;
+
+  if (loading) {
+    return (
+      <section id="projects" className="relative py-20 alt z-10 bg-black/20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <SectionHeading className="text-center mx-auto mb-4">{t('projects.heading')}</SectionHeading>
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+              {t('projects.subtitle')}
+            </p>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {Array.from({ length: 3 }).map((_, index) => (
+              <Card key={index} className="overflow-hidden h-full">
+                <Skeleton className="h-48 w-full" />
+                <CardContent className="p-6">
+                  <div className="flex justify-between items-center mb-4">
+                    <Skeleton className="h-6 w-3/4 rounded" />
+                    <Skeleton className="h-5 w-1/4 rounded" />
+                  </div>
+                  <Skeleton className="h-4 w-full rounded mb-2" />
+                  <Skeleton className="h-4 w-5/6 rounded mb-4" />
+                  <div className="flex flex-wrap gap-2 mb-4 items-center">
+                    <div className="flex gap-2 overflow-hidden">
+                      <Skeleton className="h-5 w-16 rounded" />
+                      <Skeleton className="h-5 w-20 rounded" />
+                      <Skeleton className="h-5 w-12 rounded" />
+                    </div>
+                    <div className="flex space-x-2 ml-auto">
+                      <Skeleton className="h-5 w-5 rounded-full" />
+                      <Skeleton className="h-5 w-5 rounded-full" />
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="projects" className="relative py-20 alt z-10 bg-black/20">

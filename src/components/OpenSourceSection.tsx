@@ -6,6 +6,7 @@ import { Github, ExternalLink, GitFork, Star } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useTranslation } from "@/hooks/useTranslation";
 import axios from 'axios'; // Importar axios
+import { Skeleton } from "@/components/ui/skeleton";
 
 
 type Repository = {
@@ -64,8 +65,31 @@ export default function OpenSourceSection() {
     return (
       <section id="open-source" className="py-20 alt">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading className="text-center mx-auto mb-4">{t('open_source.heading')}</SectionHeading>
-          <p className="text-center text-gray-600 dark:text-gray-400">Carregando repositórios...</p>
+          <SectionHeading className="text-center mx-auto mb-16">{t('open_source.heading')}</SectionHeading>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {Array.from({ length: 6 }).map((_, index) => (
+              <Card key={index}>
+                <CardContent className="pt-6 pb-4">
+                  <div className="flex justify-between items-start mb-4">
+                    <Skeleton className="h-6 w-3/4 rounded" />
+                    <Skeleton className="h-6 w-1/4 rounded" />
+                  </div>
+                  <Skeleton className="h-4 w-full rounded mb-2" />
+                  <Skeleton className="h-4 w-5/6 rounded mb-4" />
+                  <div className="border-t border-gray-200 dark:border-gray-800 pt-4 mt-auto">
+                    <div className="flex items-center justify-between">
+                      <div className="flex space-x-4">
+                        <Skeleton className="h-5 w-12 rounded" />
+                        <Skeleton className="h-5 w-12 rounded" />
+                        <Skeleton className="h-5 w-24 rounded" />
+                      </div>
+                      <Skeleton className="h-5 w-5 rounded" />
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
     );
