@@ -242,7 +242,11 @@
   "open_source": {
     "heading": "Open Source Projects",
     "subtitle": "Check out my open source projects and contributions on GitHub.",
-    "no_description": "No description available"
+    "no_description": "No description available",
+    "language": "Language",
+    "stars": "Stars",
+    "last_update": "Last update",
+    "refresh_repos": "Refresh Repositories"
   },
   "footer": {
     "software_engineer": "Software Engineer",

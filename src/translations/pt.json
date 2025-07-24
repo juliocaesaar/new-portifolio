@@ -242,7 +242,11 @@
   "open_source": {
     "heading": "Projetos de Código Aberto",
     "subtitle": "Confira meus projetos e contribuições de código aberto no GitHub.",
-    "no_description": "Nenhuma descrição disponível"
+    "no_description": "Nenhuma descrição disponível",
+    "language": "Linguagem",
+    "stars": "Estrelas",
+    "last_update": "Última atualização",
+    "refresh_repos": "Atualizar Repositórios"
   },
   "footer": {
     "software_engineer": "Engenheiro de Software",

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useTranslation } from '../hooks/useTranslation';
 
 interface Repo {
   id: number;
@@ -12,6 +13,7 @@ interface Repo {
 }
 
 const GitHubRepos: React.FC = () => {
+  const { t } = useTranslation();
   const [repos, setRepos] = useState<Repo[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -59,9 +61,9 @@ const GitHubRepos: React.FC = () => {
             <p className="text-gray-700 mb-2">{repo.description || 'Sem descrição'}</p>
           </div>
           <div className="text-sm text-gray-600 mt-2">
-            <p><strong>Linguagem:</strong> {repo.language || 'Não especificada'}</p>
-            <p><strong>Estrelas:</strong> {repo.stargazers_count}</p>
-            <p><strong>Última atualização:</strong> {new Date(repo.updated_at).toLocaleDateString()}</p>
+            <p><strong>{t('open_source.language')}:</strong> {repo.language || 'Não especificada'}</p>
+            <p><strong>{t('open_source.stars')}:</strong> {repo.stargazers_count}</p>
+            <p><strong>{t('open_source.last_update')}:</strong> {new Date(repo.updated_at).toLocaleDateString()}</p>
           </div>
         </div>
       ))}

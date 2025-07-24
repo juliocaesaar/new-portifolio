@@ -144,7 +144,7 @@ export default function OpenSourceSection() {
                         </div>
                          <div className="flex items-center">
                           <span className="text-sm text-gray-600 dark:text-gray-400">
-                            Última atualização: {new Date(repo.updated_at).toLocaleDateString()}
+                            {t('open_source.last_update')}: {new Date(repo.updated_at).toLocaleDateString()}
                           </span>
                         </div>
                       </div>
@@ -171,7 +171,7 @@ export default function OpenSourceSection() {
             onClick={handleRefreshClick}
             className="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
           >
-            Atualizar Repositórios
+            {t('open_source.refresh_repos')}
           </button>
         </div>
       </div>
