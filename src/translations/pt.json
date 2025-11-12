@@ -233,6 +233,17 @@
         "githubUrl": "https://github.com/juliocaesaar/portifolio",
         "externalUrl": "https://julioeu.vercel.app/",
         "badgeColor": "green"
+      },
+      {
+        "title": "Donna's Coxinhas",
+        "category": "Página de Links",
+        "description": "Página de links para a marca de salgados Donna's Coxinhas.",
+        "image": "/assets/projects/donnascoxinha.webp",
+        "technologies": ["Next.js", "Tailwind CSS"],
+        "caseStudyUrl": "#",
+        "githubUrl": null,
+        "externalUrl": "https://donnascoxinha.vercel.app/",
+        "badgeColor": "pink"
       }
     ],
     "view_case_study": "Ver Estudo de Caso",

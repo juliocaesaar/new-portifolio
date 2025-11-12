@@ -233,6 +233,17 @@
         "githubUrl": "https://github.com/juliocaesaar/portifolio",
         "externalUrl": "https://julioeu.vercel.app/",
         "badgeColor": "green"
+      },
+      {
+        "title": "Donna's Coxinhas",
+        "category": "Link Page",
+        "description": "Link-in-bio page for the Donna's Coxinhas snack brand.",
+        "image": "/assets/projects/donnascoxinha.webp",
+        "technologies": ["Next.js", "Tailwind CSS"],
+        "caseStudyUrl": "#",
+        "githubUrl": null,
+        "externalUrl": "https://donnascoxinha.vercel.app/",
+        "badgeColor": "pink"
       }
     ],
     "view_case_study": "View Case Study",

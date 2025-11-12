@@ -36,7 +36,8 @@ export default function ProjectsSection() {
       if (projects.length > 0) {
         const shuffled = [...projects].sort(() => 0.5 - Math.random());
         setShuffledProjects(shuffled);
-        setRandomProjects(shuffled.slice(0, 3));
+        const displayedCount = Math.min(6, shuffled.length);
+        setRandomProjects(shuffled.slice(0, displayedCount));
         setLoading(false);
       }
     }, 1500); // Simulate loading
@@ -63,7 +64,7 @@ export default function ProjectsSection() {
             </p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {Array.from({ length: 3 }).map((_, index) => (
+            {Array.from({ length: Math.min(6, projects.length || 6) }).map((_, index) => (
               <Card key={index} className="overflow-hidden h-full">
                 <Skeleton className="h-48 w-full" />
                 <CardContent className="p-6">
@@ -172,7 +173,7 @@ export default function ProjectsSection() {
           ))}
         </div>
 
-        {projects.length > 4 && (
+        {projects.length > 6 && (
           <motion.div
             ref={buttonRef} // Atribuir a referência ao div pai do botão
             className="text-center mt-12"

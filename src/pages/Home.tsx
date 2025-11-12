@@ -22,6 +22,12 @@ export default function Home() {
       
       <main>
         <HeroSection />
+        <Suspense fallback={<div>Loading Projects...</div>}> {/* Adicionar Suspense */}
+          <div className="relative">
+            <AnimatedBackground />
+            <ProjectsSection />
+          </div>
+        </Suspense>
         <Suspense fallback={<div>Loading About...</div>}> {/* Adicionar Suspense */}
           <div className="relative">
             <AnimatedBackground />
@@ -32,12 +38,6 @@ export default function Home() {
           <div className="relative">
             <AnimatedBackground />
             <ExperienceSection />
-          </div>
-        </Suspense>
-        <Suspense fallback={<div>Loading Projects...</div>}> {/* Adicionar Suspense */}
-          <div className="relative">
-            <AnimatedBackground />
-            <ProjectsSection />
           </div>
         </Suspense>
         <Suspense fallback={<div>Loading Open Source...</div>}> {/* Adicionar Suspense */}
