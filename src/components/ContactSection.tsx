@@ -15,6 +15,7 @@ import {
   Send,
   Github,
   Linkedin,
+  Instagram,
   Twitter,
   Dribbble
 } from "lucide-react";
@@ -144,6 +145,15 @@ export default function ContactSection() {
                   rel="noopener noreferrer"
                 >
                   <Linkedin className="h-5 w-5 text-gray-700 dark:text-gray-300" />
+                </a>
+                <a
+                  href="https://www.instagram.com/juliodevelop.online"
+                  className="bg-white dark:bg-[hsl(var(--dark-bg))] p-3 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-dark-border"
+                  aria-label="Instagram Profile"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Instagram className="h-5 w-5 text-gray-700 dark:text-gray-300" />
                 </a>
                 {/* <a
                   href="#" // Link placeholder
