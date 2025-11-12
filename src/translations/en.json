@@ -6,26 +6,27 @@
     "open_source": "Open Source",
     "testimonials": "Testimonials",
     "contact": "Contact",
-    "skills": "Skills"
+    "skills": "Services"
   },
   "hero": {
-    "title": "Hello, I'm Julio, Website and Web Solutions Developer",
-    "subtitle": "Full Stack Developer and Website Creation Specialist",
-    "description": "I build robust web experiences from concept to launch, including institutional websites, high-converting landing pages, hotsites, online forms, and linktrees. I combine frontend, backend, and UI/UX design expertise to deliver digital products that solve real problems for your business.",
-    "contact_button": "Get in touch",
-    "view_work_button": "View my work",
-    "role": "Full-Stack Developer",
-    "experience_years": "5+ years experience",
+    "title": "Ready to launch a site that actually sells?",
+    "highlight": "JulioDevelop",
+    "subtitle": "crafts tailored platforms that turn visitors into customers.",
+    "description": "Bring your idea and our team will map the strategy, design, and technology to deliver a fast, modern, and measurable experience focused on your business goals.",
+    "contact_button": "Talk with our team",
+    "view_work_button": "Explore recent launches",
+    "role": "Software creation company",
+    "experience_years": "5+ years delivering measurable results",
     "trustedByCompaniesWorldwide": "Trusted by companies worldwide"
   },
   "about": {
-    "heading": "About Me",
-    "paragraph1": "My software development journey began with a focus on creating intuitive and attractive user interfaces, valuing good usability in every website and web application project.",
-    "paragraph2": "This foundation led me to full-stack development, where I build complete and robust applications, from institutional websites to complex platforms. I seek to innovate and create web solutions that generate positive impact and solve complex challenges for my clients.",
+    "heading": "About JulioDevelop",
+    "paragraph1": "JulioDevelop is a software creation company dedicated to crafting intuitive and high-performing web experiences that elevate ambitious brands.",
+    "paragraph2": "Our multidisciplinary team blends strategy, design, and engineering to deliver everything from institutional websites to complex platforms—always aligned with measurable outcomes for our clients.",
     "technical_skills": {
       "heading": "Technical Skills",
       "items": [
-        "Web Full-Stack Development",
+        "Full-Stack Web Development",
         "Responsive Website Creation",
         "Data Modeling and Management",
         "API Integration"
@@ -39,90 +40,123 @@
         "Corporate Websites & Platforms"
       ]
     },
-    "contact_button": "Let's work together",
-    "companies_heading": "Companies I've worked with",
+    "contact_button": "Partner with us",
+    "companies_heading": "Brands we've supported",
     "trusted_by_companies": "Trusted by companies worldwide"
   },
   "experience": {
     "heading": "Professional Experience",
-    "subtitle": "Throughout my career, I've focused on delivering high-quality software solutions and staying updated with modern technologies.",
-    "skills": {
-      "heading": "Key Expertise",
+    "subtitle": "Our company is committed to delivering high-quality software solutions while staying ahead with modern technologies.",
+    "services": {
+      "heading": "Services",
+      "subtitle": "Custom-built software products and sites that we design, build, and evolve for your business.",
       "items": [
-        { "name": "Frontend Development", "percentage": 95 },
-        { "name": "Backend Development", "percentage": 90 },
-        { "name": "Project Leadership", "percentage": 80 },
-        { "name": "UI/UX Designer", "percentage": 80 }
+        {
+          "name": "Institutional Websites",
+          "summary": "Credibility-focused websites that position your brand, mission, and services with clarity.",
+          "deliverables": [
+            "Custom design system and responsive layout",
+            "Strategic content architecture and copy guidance",
+            "On-page SEO foundation for discoverability"
+          ]
+        },
+        {
+          "name": "High-Converting Landing Pages",
+          "summary": "Campaign-ready landing pages designed to capture leads and accelerate product launches.",
+          "deliverables": [
+            "Conversion-oriented storytelling and CTAs",
+            "Integration with analytics and marketing tools",
+            "Performance-focused implementation for fast loading"
+          ]
+        },
+        {
+          "name": "E-commerce & Catalog Experiences",
+          "summary": "Digital storefronts that combine frictionless shopping with operational efficiency.",
+          "deliverables": [
+            "Checkout flows integrated with payment providers",
+            "Product catalog management tailored to your workflow",
+            "Automation hooks for inventory and logistics"
+          ]
+        },
+        {
+          "name": "Platforms & Portals",
+          "summary": "Web applications and portals that scale your business processes and customer journeys.",
+          "deliverables": [
+            "User roles, authentication, and secure data handling",
+            "API-driven architecture ready for integrations",
+            "Ongoing evolution with measurable product metrics"
+          ]
+        }
       ]
     },
     "experiences": {
-      "heading": "Experiences",
+      "heading": "Client Engagements",
       "items": [
         {
-          "role": "Full Stack Developer",
+          "role": "Full Stack Developepment",
           "company": "Windi Software House",
           "period": "March 2025 - July 2025",
-          "description": "Product management and DevOps infrastructure for software solutions.",
+          "description": "Provided product management support and DevOps infrastructure for their software solutions.",
           "technologies": ["React", "Node.js", "Docker", "GitHub Actions", "CI/CD", "PWA", "TypeScript", "IA Assistants"],
           "color": "purple"
         },
         {
-          "role": "Full Stack Developer",
+          "role": "Full Stack Developepment",
           "company": "StartGov",
           "period": "July 2023 - September 2023",
-          "description": "Development of complete web solutions for the government sector.",
+          "description": "Developed comprehensive web platforms tailored to government digital services.",
           "technologies": ["Vue", "Laravel", "BootstrapVue", "MySql", "REST APIs"],
           "color": "yellow"
         },
         {
-          "role": "Frontend Developer",
+          "role": "Frontend Developepment",
           "company": "Overdrive Softwares e Consultoria",
           "period": "December 2021 - July 2023",
-          "description": "Development of modern and responsive web interfaces for enterprise systems.",
+          "description": "Created modern and responsive web interfaces for enterprise systems.",
           "technologies": ["Vue", "Nuxt", "Firebase", "JavaScript", "Tailwind", "UI/UX"],
           "color": "red"
         },
         {
-          "role": "Full Stack Developer",
+          "role": "Full Stack Developepment",
           "company": "C Agri - Investimentos",
           "period": "September 2022 - June 2023",
-          "description": "Development of technological solutions for the agricultural sector.",
+          "description": "Built technology solutions that advanced innovation in the agricultural sector.",
           "technologies": ["Vue", "Node.js", "Express", "Tailwind", "MongoDb"],
           "color": "white"
         },
         {
-          "role": "Fluig Developer",
+          "role": "Fluig Developepment",
           "company": "Purinutre",
           "period": "March 2022 - November 2022",
-          "description": "Development of Custom Processes and Events within the Fluig Totvs System.",
+          "description": "Implemented custom processes and events within the Fluig TOTVS ecosystem.",
           "technologies": ["Fluig", "TOTVS", "JavaScript", "Workflows"],
           "color": "orange"
         },
         {
-          "role": "Freelancer Developer",
+          "role": "Freelance Developepment",
           "company": "Decole Digital",
           "period": "July 2021 - September 2022",
-          "description": "Development of digital solutions and websites.",
+          "description": "Delivered digital solutions and high-impact marketing websites.",
           "technologies": ["Vue", "Css", "JavaScript", "HTML/CSS"],
           "color": "blue"
         },
         {
-          "role": "Frontend Developer and UI/UX Designer",
+          "role": "Frontend Developepment and UI/UX Designer",
           "company": "InBolso",
           "period": "July 2020 - October 2020",
-          "description": "Fintech startup for collections and protests",
+          "description": "Supported the fintech startup with frontend delivery and UI/UX design initiatives.",
           "technologies": ["Vue", "Css", "JavaScript", "Figma", "Framer"],
           "color": "green"
         }
       ]
     },
-    "contact_button": "Get in touch",
+    "contact_button": "Discuss a project",
     "see_more": "see more",
     "see_less": "see less"
   },
   "projects": {
     "heading": "Featured Projects",
-    "subtitle": "A selection of projects that showcase my skills across different domains and technologies.",
+    "subtitle": "A selection of projects that showcase our team's capabilities across different domains and technologies.",
     "items": [
       {
         "title": "Grupo Topazio",
@@ -252,7 +286,7 @@
   },
   "open_source": {
     "heading": "Open Source Projects",
-    "subtitle": "Check out my open source projects and contributions on GitHub.",
+    "subtitle": "Explore our open source projects and contributions on GitHub.",
     "no_description": "No description available",
     "language": "Language",
     "stars": "Stars",
@@ -283,8 +317,8 @@
     "send_message": "Send Message",
     "location_heading": "Location",
     "availability_heading": "Availability",
-    "connect_heading": "Connect with me",
-    "description": "I am available for new projects and collaborations. If you have an idea or need help with software development, feel free to get in touch!",
+    "connect_heading": "Connect with our team",
+    "description": "We are available for new projects and collaborations. If you have an idea or need help with software development, feel free to reach out!",
     "location_text": "Imperatriz, MA, Brazil (Remote Available)",
     "availability_text": "Available for new projects"
   }

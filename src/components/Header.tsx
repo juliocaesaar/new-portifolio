@@ -10,10 +10,10 @@ import { useLanguage } from "@/context/LanguageContext";
 import { useTranslation } from "@/hooks/useTranslation";
 
 const NavItems = [
-  { name: "header.about", href: "#about" },
-  { name: "header.experience", href: "#experience" },
-  { name: "header.skills", href: "#skills" },
   { name: "header.projects", href: "#projects" },
+  { name: "header.about", href: "#about" },
+  { name: "header.skills", href: "#services" },
+  { name: "header.experience", href: "#experience" },
   { name: "header.contact", href: "#contact" },
 ];
 

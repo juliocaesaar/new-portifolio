@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Briefcase, Music, Home, MessageSquare } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { scrollToElement } from "@/lib/utils";
 import { useTranslation } from "@/hooks/useTranslation";
@@ -71,9 +71,12 @@ export default function HeroSection() {
         >
           <motion.div className="lg:w-1/2" variants={childVariants}>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 tracking-tight text-gray-900 dark:text-white">
-              {t('hero.title').split('Julio')[0]}<span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600 dark:from-primary dark:to-green-400">Julio</span>{t('hero.title').split('Julio')[1]}
+              {t('hero.title')}
             </h1>
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 text-gray-700 dark:text-gray-200">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600 dark:from-primary dark:to-green-400">
+                {t('hero.highlight')}
+              </span>{" "}
               {t('hero.subtitle')}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-xl">

@@ -6,22 +6,23 @@
     "open_source": "Código Aberto",
     "testimonials": "Depoimentos",
     "contact": "Contato",
-    "skills": "Habilidades"
+    "skills": "Serviços"
   },
   "hero": {
-    "title": "Olá, eu sou Julio, Desenvolvedor de Sites e Soluções Web",
-    "subtitle": "Desenvolvedor Full Stack e Especialista em Criação de Sites",
-    "description": "Desenvolvo experiências web completas do conceito ao lançamento, como sites institucionais, landing pages de alta conversão, hotsites, formulários online e linktrees. Uno conhecimentos em frontend, backend e UI/UX para criar produtos digitais que resolvem problemas reais do seu negócio.",
-    "contact_button": "Entre em contato",
-    "view_work_button": "Ver meu trabalho",
-    "role": "Desenvolvedor Full-Stack",
-    "experience_years": "5+ anos de experiência",
+    "title": "Pronto para lançar um site que realmente vende?",
+    "highlight": "JulioDevelop",
+    "subtitle": "cria plataformas sob medida que transformam visitantes em clientes.",
+    "description": "Traga sua ideia e nossa equipe cuida da estratégia, design e tecnologia para entregar uma experiência moderna, rápida e mensurável, focada nas metas do seu negócio.",
+    "contact_button": "Fale com nossa equipe",
+    "view_work_button": "Explorar projetos recentes",
+    "role": "Criadora de software",
+    "experience_years": "5+ anos gerando resultados mensuráveis",
     "trustedByCompaniesWorldwide": "Confiado por empresas em todo o mundo"
   },
   "about": {
-    "heading": "Sobre Mim",
-    "paragraph1": "Minha jornada no desenvolvimento de software começou com foco em criar interfaces de usuário intuitivas e atraentes, valorizando a boa usabilidade em cada projeto de site e aplicação web.",
-    "paragraph2": "Essa base me levou ao desenvolvimento full-stack, onde construo aplicações completas e robustas, desde sites institucionais a plataformas complexas. Busco inovar e criar soluções web que gerem impacto positivo e resolvam desafios complexos para meus clientes.",
+    "heading": "Sobre a JulioDevelop",
+    "paragraph1": "A JulioDevelop é uma criadora de software dedicada a desenvolver experiências web intuitivas e de alta performance que elevam marcas ambiciosas.",
+    "paragraph2": "Nossa equipe multidisciplinar combina estratégia, design e engenharia para entregar desde sites institucionais até plataformas complexas — sempre alinhadas a resultados mensuráveis para nossos clientes.",
     "technical_skills": {
       "heading": "Habilidades Técnicas",
       "items": [
@@ -39,90 +40,123 @@
         "Websites e Plataformas Corporativas"
       ]
     },
-    "contact_button": "Vamos trabalhar juntos",
-    "companies_heading": "Empresas com as quais trabalhei",
+    "contact_button": "Faça parceria conosco",
+    "companies_heading": "Marcas que apoiamos",
     "trusted_by_companies": "Confiado por empresas em todo o mundo"
   },
   "experience": {
     "heading": "Experiência Profissional",
-    "subtitle": "Ao longo da minha carreira, foquei em entregar soluções de software de alta qualidade e me manter atualizado com tecnologias modernas.",
-    "skills": {
-      "heading": "Principais Habilidades",
+    "subtitle": "Nossa empresa é dedicada a entregar soluções de software de alta qualidade e a se manter à frente com tecnologias modernas.",
+    "services": {
+      "heading": "Serviços",
+      "subtitle": "Produtos digitais e sites sob medida que planejamos, desenvolvemos e evoluímos para o seu negócio.",
       "items": [
-        { "name": "Desenvolvimento Frontend", "percentage": 95 },
-        { "name": "Desenvolvimento Backend", "percentage": 90 },
-        { "name": "Liderança de Projetos", "percentage": 80 },
-        { "name": "Designer UI/UX", "percentage": 80 }
+        {
+          "name": "Sites Institucionais",
+          "summary": "Websites focados em credibilidade que posicionam sua marca, missão e serviços com clareza.",
+          "deliverables": [
+            "Design personalizado e layout responsivo",
+            "Arquitetura de conteúdo estratégica e apoio em copy",
+            "Base de SEO on-page para ser encontrado"
+          ]
+        },
+        {
+          "name": "Landing Pages de Alta Conversão",
+          "summary": "Páginas de campanha desenhadas para captar leads e acelerar lançamentos.",
+          "deliverables": [
+            "Narrativa com foco em conversão e CTAs persuasivos",
+            "Integração com ferramentas de marketing e analytics",
+            "Implementação otimizada para carregamento rápido"
+          ]
+        },
+        {
+          "name": "Experiências E-commerce & Catálogos",
+          "summary": "Lojas digitais que unem jornada de compra fluida com eficiência operacional.",
+          "deliverables": [
+            "Fluxos de checkout integrados a meios de pagamento",
+            "Gestão de catálogo alinhada ao seu dia a dia",
+            "Automação para estoque, pedidos e logística"
+          ]
+        },
+        {
+          "name": "Plataformas e Portais",
+          "summary": "Aplicações web e portais que escalam processos internos e jornadas dos seus clientes.",
+          "deliverables": [
+            "Papéis de usuário, autenticação e dados com segurança",
+            "Arquitetura orientada a APIs pronta para integrações",
+            "Evolução contínua com métricas de produto"
+          ]
+        }
       ]
     },
     "experiences": {
-      "heading": "Experiências",
+      "heading": "Atuações com Clientes",
       "items": [
         {
-          "role": "Full Stack Developer",
+          "role": "Desenvolvimento Full Stack",
           "company": "Windi Software House",
           "period": "março de 2025 - julho de 2025",
-          "description": "Gerenciamento de produtos e infraestrutura DevOps para soluções de software.",
+          "description": "Suporte ao gerenciamento de produtos e infraestrutura DevOps para as soluções de software da empresa.",
           "technologies": ["React", "Node.js", "Docker", "GitHub Actions", "CI/CD", "PWA", "TypeScript", "IA Assistants"],
           "color": "purple"
         },
         {
-          "role": "Desenvolvedor Full Stack",
+          "role": "Desenvolvimento Full Stack",
           "company": "StartGov",
           "period": "julho 2023 - setembro 2023",
-          "description": "Desenvolvimento de soluções web completas para o setor governamental.",
+          "description": "Desenvolvimento de plataformas web completas voltadas para serviços digitais governamentais.",
           "technologies": ["Vue", "Laravel", "BootstrapVue", "MySql", "REST APIs"],
           "color": "yellow"
         },
         {
-          "role": "Desenvolvedor Front-end",
+          "role": "Desenvolvimento Front-end",
           "company": "Overdrive Softwares e Consultoria",
           "period": "dezembro 2021 - julho 2023",
-          "description": "Desenvolvimento de interfaces web modernas e responsivas para sistemas empresariais.",
+          "description": "Criação de interfaces web modernas e responsivas para sistemas empresariais.",
           "technologies": ["Vue", "Nuxt", "Firebase", "JavaScript", "Tailwind", "UI/UX"],
           "color": "red"
         },
         {
-          "role": "Full Stack Developer",
+          "role": "Desenvolvimento Full Stack",
           "company": "C Agri - Investimentos",
           "period": "setembro 2022 - junho 2023",
-          "description": "Desenvolvimento de soluções tecnológicas para o setor agrícola.",
+          "description": "Construção de soluções tecnológicas que impulsionaram inovação no setor agrícola.",
           "technologies": ["Vue", "Node.js", "Express", "Tailwind", "MongoDb"],
           "color": "white"
         },
         {
-          "role": "Desenvolvedor Fluig",
+          "role": "Desenvolvimento Fluig",
           "company": "Purinutre",
           "period": "março 2022 - novembro 2022",
-          "description": "Desenvolvimento de Processos e Eventos Personalizados dentro do Sistema Fluig Totvs.",
+          "description": "Implementação de processos e eventos personalizados dentro do ecossistema Fluig TOTVS.",
           "technologies": ["Fluig", "TOTVS", "JavaScript", "Workflows"],
           "color": "red"
         },
         {
-          "role": "Developer Freelancer",
+          "role": "Desenvolvimento Freelancer",
           "company": "Decole Digital",
           "period": "julho 2021 - setembro 2022",
-          "description": "Desenvolvimento de soluções digitais e websites.",
+          "description": "Entrega de soluções digitais e websites de alto impacto para campanhas.",
           "technologies": ["Vue", "Css", "JavaScript", "HTML/CSS"],
           "color": "blue"
         },
         {
-          "role": "Desenvolvedor Frontend e Designer UI/UX",
+          "role": "Desenvolvimento Frontend e Designer UI/UX",
           "company": "InBolso",
           "period": "Jullho 2020 - Outubro 2020",
-          "description": "Startup fintech de cobrança e protesto",
+          "description": "Suporte à fintech com entregas de frontend e iniciativas de design UI/UX.",
           "technologies": ["Vue", "Css", "JavaScript", "Figma", "Framer"],
           "color": "green"
         }
       ]
     },
-    "contact_button": "Entre em contato",
+    "contact_button": "Converse sobre um projeto",
     "see_more": "ver mais",
     "see_less": "ver menos"
   },
   "projects": {
     "heading": "Projetos em Destaque",
-    "subtitle": "Uma seleção de projetos que demonstram minhas habilidades em diferentes domínios e tecnologias.",
+    "subtitle": "Uma seleção de projetos que demonstra as capacidades da nossa equipe em diferentes domínios e tecnologias.",
     "items": [
       {
         "title": "Grupo Topazio",
@@ -252,7 +286,7 @@
   },
   "open_source": {
     "heading": "Projetos de Código Aberto",
-    "subtitle": "Confira meus projetos e contribuições de código aberto no GitHub.",
+    "subtitle": "Confira nossos projetos e contribuições de código aberto no GitHub.",
     "no_description": "Nenhuma descrição disponível",
     "language": "Linguagem",
     "stars": "Estrelas",
@@ -283,8 +317,8 @@
     "send_message": "Enviar Mensagem",
     "location_heading": "Localização",
     "availability_heading": "Disponibilidade",
-    "connect_heading": "Conecte-se comigo",
-    "description": "Estou disponível para novos projetos e colaborações. Se você tem uma ideia ou precisa de ajuda com desenvolvimento de software, entre em contato!",
+    "connect_heading": "Conecte-se com nossa equipe",
+    "description": "Estamos disponíveis para novos projetos e colaborações. Se você tem uma ideia ou precisa de ajuda com desenvolvimento de software, fale com a gente!",
     "location_text": "Imperatriz, MA, Brasil (Remoto Disponível)",
     "availability_text": "Disponível para novos projetos"
   }

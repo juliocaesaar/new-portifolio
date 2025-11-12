@@ -8,7 +8,6 @@ import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 const AboutSection = lazy(() => import("@/components/AboutSection"));
 const ExperienceSection = lazy(() => import("@/components/ExperienceSection"));
 const ProjectsSection = lazy(() => import("@/components/ProjectsSection"));
-const OpenSourceSection = lazy(() => import("@/components/OpenSourceSection"));
 const ContactSection = lazy(() => import("@/components/ContactSection"));
 const Footer = lazy(() => import("@/components/Footer"));
 
@@ -38,12 +37,6 @@ export default function Home() {
           <div className="relative">
             <AnimatedBackground />
             <ExperienceSection />
-          </div>
-        </Suspense>
-        <Suspense fallback={<div>Loading Open Source...</div>}> {/* Adicionar Suspense */}
-          <div className="relative">
-            <AnimatedBackground />
-            <OpenSourceSection />
           </div>
         </Suspense>
         <Suspense fallback={<div>Loading Contact...</div>}> {/* Adicionar Suspense */}

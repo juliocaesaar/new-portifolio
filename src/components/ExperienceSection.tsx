@@ -2,14 +2,14 @@ import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Progress } from "@/components/ui/progress";
 import { useTranslation } from "@/hooks/useTranslation";
 import { useState, useEffect } from "react"; // Importar useState
 import { Skeleton } from "@/components/ui/skeleton";
 
-type Skill = {
+type Service = {
   name: string;
-  percentage: number;
+  summary: string;
+  deliverables?: string[];
 };
 
 type Experience = {
@@ -26,7 +26,7 @@ export default function ExperienceSection() {
   const [loading, setLoading] = useState(true);
 
   // Safely access the nested arrays
-  const skills: Skill[] = currentTranslations?.experience?.skills?.items || [];
+  const services: Service[] = currentTranslations?.experience?.services?.items || [];
   const experiences: Experience[] = currentTranslations?.experience?.experiences?.items || [];
 
   // Estado para controlar a expansão das descrições individuais
@@ -65,6 +65,37 @@ export default function ExperienceSection() {
     return (
       <section id="experience" className="relative py-20 z-10 bg-black/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div id="services" className="mb-16">
+            <motion.div
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <SectionHeading className="text-center mx-auto mb-4">
+                {t("experience.services.heading")}
+              </SectionHeading>
+              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                {t("experience.services.subtitle")}
+              </p>
+            </motion.div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {Array.from({ length: 4 }).map((_, index) => (
+                <Card key={index} className="h-full">
+                  <CardContent className="pt-6 pb-6">
+                    <Skeleton className="h-6 w-48 rounded mb-4" />
+                    <Skeleton className="h-4 w-full rounded mb-2" />
+                    <Skeleton className="h-4 w-5/6 rounded mb-4" />
+                    <div className="space-y-2">
+                      <Skeleton className="h-4 w-3/4 rounded" />
+                      <Skeleton className="h-4 w-2/3 rounded" />
+                      <Skeleton className="h-4 w-1/2 rounded" />
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 20 }}
@@ -110,6 +141,57 @@ export default function ExperienceSection() {
   return (
     <section id="experience" className="relative py-20 z-10 bg-black/20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {services.length > 0 && (
+          <motion.div
+            id="services"
+            className="mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <div className="text-center mb-12">
+              <SectionHeading className="text-center mx-auto mb-4">
+                {t("experience.services.heading")}
+              </SectionHeading>
+              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                {t("experience.services.subtitle")}
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {services.map((service, index) => (
+                <motion.div
+                  key={service.name + index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                >
+                  <Card className="h-full">
+                    <CardContent className="pt-6 pb-6">
+                      <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
+                        {service.name}
+                      </h3>
+                      <p className="text-gray-700 dark:text-gray-300">
+                        {service.summary}
+                      </p>
+                      {Array.isArray(service.deliverables) && service.deliverables.length > 0 && (
+                        <ul className="mt-5 space-y-3 text-sm text-gray-600 dark:text-gray-300">
+                          {service.deliverables.map((item, itemIndex) => (
+                            <li key={itemIndex} className="flex items-start gap-3">
+                              <span className="mt-1 h-2.5 w-2.5 rounded-full bg-primary dark:bg-green-400" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        )}
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}

@@ -51,7 +51,7 @@ export default function ContactSection() {
 
       toast({
         title: "Message sent!",
-        description: "Thanks for reaching out. I'll get back to you soon.",
+        description: "Thanks for reaching out. We'll get back to you soon.",
       });
 
       // Reset form after successful submission
@@ -64,7 +64,7 @@ export default function ContactSection() {
     } catch (error) {
       toast({
         title: "Failed to send message",
-        description: "Please try again later or contact me directly via email.",
+        description: "Please try again later or contact us directly via email.",
         variant: "destructive"
       });
     } finally {
