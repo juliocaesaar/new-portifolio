@@ -193,3 +193,31 @@ section.alt {
   border-radius: 20px;
   border: transparent;
 }
+
+/* Santa Hat Animation */
+@keyframes jiggle {
+  0%, 100% { transform: rotate(10deg); }
+  25% { transform: rotate(2deg); }
+  50% { transform: rotate(16deg); }
+  75% { transform: rotate(6deg); }
+}
+
+.logo-container {
+  position: relative;
+}
+
+.santa-hat-wrapper {
+  position: absolute;
+  top: 3px;
+  left: 140px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.logo-container:hover .santa-hat-svg {
+  animation: jiggle 0.4s ease-in-out;
+}
+
+.logo-container span {
+  font-family: "Jersey 25 Charted", sans-serif;
+}
