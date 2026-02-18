@@ -16,8 +16,12 @@ export default function AboutSection() {
 
 
   return (
-    <section id="about" className="relative py-20 alt">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="relative py-20 alt overflow-hidden">
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-10 dark:opacity-5"
+        style={{ backgroundImage: "url('/assets/og-background.png')" }}
+      />
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row gap-16 items-center">
           <motion.div
             className="lg:w-2/5"

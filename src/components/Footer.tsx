@@ -39,12 +39,21 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a 
-                    href="#projects" 
+                  <a
+                    href="#projects"
                     onClick={(e) => handleNavClick(e, "#projects")}
                     className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-green-400 transition-colors"
                   >
                     {t('footer.projects')}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#experience"
+                    onClick={(e) => handleNavClick(e, "#experience")}
+                    className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-green-400 transition-colors"
+                  >
+                    {t('header.skills')}
                   </a>
                 </li>
                 <li>

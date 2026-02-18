@@ -17,6 +17,7 @@ import startgovLogo from "/public/assets/companies/startgov.png";
 import topazioLogo from "/public/assets/companies/topazio.png";
 import cellestiLogo from "/public/assets/companies/cellesti.png";
 import cagriLogo from "/public/assets/companies/cagri.png";
+import voreliLogo from "/public/assets/companies/voreli.png";
 
 const companyLogos = [
   { name: "Aggio", src: aggioLogo },
@@ -31,6 +32,7 @@ const companyLogos = [
   { name: "Topazio", src: topazioLogo },
   { name: "Cellesti", src: cellestiLogo },
   { name: "Cagri", src: cagriLogo },
+  { name: "Voreli", src: voreliLogo },
 ];
 
 const containerVariants = {
@@ -101,9 +103,9 @@ export default function HeroSection() {
 
           <motion.div className="lg:w-1/2 relative" variants={childVariants}>
             <motion.img
-              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
-              alt="Software Engineer workspace with code on screen"
-              className="rounded-2xl shadow-xl w-full max-w-lg mx-auto"
+              src="/assets/og-background.png"
+              alt="JulioDevelop Logo"
+              className="rounded-2xl shadow-xl w-full max-w-xs mx-auto aspect-square object-cover"
               animate={{
                 y: [0, -10, 0],
                 transition: {
@@ -151,25 +153,28 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.5 }}
         >
-          <p className="text-sm text-gray-500 dark:text-gray-400 w-full text-center mb-6">{t('hero.trustedByCompaniesWorldwide')}</p>
-          {/* Seção de logos das empresas */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 justify-items-center items-center">
-            {companyLogos.map((logo, index) => (
-              <motion.div
-                key={index}
-                className="w-32 h-20 flex items-center justify-center p-3 bg-gray-300/80 dark:bg-gray-800/20 rounded-lg backdrop-blur-md"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
-                viewport={{ once: true, margin: "-50px" }}
-              >
-                <img
-                  src={logo.src}
-                  alt={`${logo.name} Logo`}
-                  className="max-h-full max-w-full object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
-                />
-              </motion.div>
-            ))}
+          <p className="text-sm text-gray-500 dark:text-gray-400 w-full text-center mb-2">{t('hero.trustedByCompaniesWorldwide')}</p>
+          <div
+            className="relative w-full overflow-hidden"
+            style={{
+              maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+              WebkitMaskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+            }}
+          >
+            <div className="flex w-max animate-marquee hover:[animation-play-state:paused]">
+              {[...companyLogos, ...companyLogos].map((logo, index) => (
+                <div
+                  key={index}
+                  className="mx-10 flex h-16 w-32 shrink-0 items-center justify-center"
+                >
+                  <img
+                    src={logo.src}
+                    alt={`${logo.name} Logo`}
+                    className="max-h-full max-w-full object-contain grayscale transition-all duration-300 hover:grayscale-0"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </motion.div>
       </div>
