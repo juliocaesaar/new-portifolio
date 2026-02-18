@@ -28,7 +28,7 @@ export default function MobileMenu({ isOpen, onClose, items }: MobileMenuProps) 
               Menu
             </Dialog.Title>
             <Dialog.Close asChild>
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" aria-label="Fechar menu">
                 <X className="h-5 w-5" />
               </Button>
             </Dialog.Close>

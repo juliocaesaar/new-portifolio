@@ -137,6 +137,7 @@ export default function HeroSection() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
+                    aria-hidden="true"
                   >
                     <path d="M16 18L22 12L16 6"></path>
                     <path d="M8 6L2 12L8 18"></path>

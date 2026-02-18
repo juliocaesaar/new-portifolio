@@ -93,7 +93,7 @@
       "heading": "Client Engagements",
       "items": [
         {
-          "role": "Full Stack Developepment",
+          "role": "Full Stack Development",
           "company": "Windi Software House",
           "period": "March 2025 - July 2025",
           "description": "Provided product management support and DevOps infrastructure for their software solutions.",
@@ -101,7 +101,7 @@
           "color": "purple"
         },
         {
-          "role": "Full Stack Developepment",
+          "role": "Full Stack Development",
           "company": "StartGov",
           "period": "July 2023 - September 2023",
           "description": "Developed comprehensive web platforms tailored to government digital services.",
@@ -109,7 +109,7 @@
           "color": "yellow"
         },
         {
-          "role": "Frontend Developepment",
+          "role": "Frontend Development",
           "company": "Overdrive Softwares e Consultoria",
           "period": "December 2021 - July 2023",
           "description": "Created modern and responsive web interfaces for enterprise systems.",
@@ -117,7 +117,7 @@
           "color": "red"
         },
         {
-          "role": "Full Stack Developepment",
+          "role": "Full Stack Development",
           "company": "C Agri - Investimentos",
           "period": "September 2022 - June 2023",
           "description": "Built technology solutions that advanced innovation in the agricultural sector.",
@@ -125,7 +125,7 @@
           "color": "white"
         },
         {
-          "role": "Fluig Developepment",
+          "role": "Fluig Development",
           "company": "Purinutre",
           "period": "March 2022 - November 2022",
           "description": "Implemented custom processes and events within the Fluig TOTVS ecosystem.",
@@ -133,7 +133,7 @@
           "color": "orange"
         },
         {
-          "role": "Freelance Developepment",
+          "role": "Freelance Development",
           "company": "Decole Digital",
           "period": "July 2021 - September 2022",
           "description": "Delivered digital solutions and high-impact marketing websites.",
@@ -141,7 +141,7 @@
           "color": "blue"
         },
         {
-          "role": "Frontend Developepment and UI/UX Designer",
+          "role": "Frontend Development and UI/UX Designer",
           "company": "InBolso",
           "period": "July 2020 - October 2020",
           "description": "Supported the fintech startup with frontend delivery and UI/UX design initiatives.",

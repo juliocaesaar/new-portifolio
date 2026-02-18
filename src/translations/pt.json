@@ -130,7 +130,7 @@
           "period": "março 2022 - novembro 2022",
           "description": "Implementação de processos e eventos personalizados dentro do ecossistema Fluig TOTVS.",
           "technologies": ["Fluig", "TOTVS", "JavaScript", "Workflows"],
-          "color": "red"
+          "color": "orange"
         },
         {
           "role": "Desenvolvimento Freelancer",
@@ -143,7 +143,7 @@
         {
           "role": "Desenvolvimento Frontend e Designer UI/UX",
           "company": "InBolso",
-          "period": "Jullho 2020 - Outubro 2020",
+          "period": "Julho 2020 - Outubro 2020",
           "description": "Suporte à fintech com entregas de frontend e iniciativas de design UI/UX.",
           "technologies": ["Vue", "Css", "JavaScript", "Figma", "Framer"],
           "color": "green"

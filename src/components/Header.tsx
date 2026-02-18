@@ -151,6 +151,7 @@ export default function Header() {
             <button
               className="px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-green-400 transition-colors"
               onClick={toggleLanguage}
+              aria-label={language === 'pt' ? 'Switch to English' : 'Mudar para Português'}
             >
               {language.toUpperCase()}
             </button>
