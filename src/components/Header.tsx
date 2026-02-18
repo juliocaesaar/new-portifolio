@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Link } from "wouter";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Menu } from "lucide-react";
@@ -13,7 +13,7 @@ const NavItems = [
   { name: "header.projects", href: "#projects" },
   { name: "header.about", href: "#about" },
   { name: "header.skills", href: "#services" },
-  { name: "header.experience", href: "#experience" },
+
   { name: "header.contact", href: "#contact" },
 ];
 
@@ -79,17 +79,19 @@ export default function Header() {
     setShowSantaHat(isChristmasPeriod());
   }, []);
 
-  const activeSection = useScrollSpy(
-    NavItems.map((item) => item.href.replace("#", "")),
-    { threshold: 0.5 },
+  const sectionIds = useMemo(
+    () => NavItems.map((item) => item.href.replace("#", "")),
+    [],
   );
+
+  const activeSection = useScrollSpy(sectionIds, { threshold: 0.5 });
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -117,17 +119,14 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           <Link
             href="/"
-            className="logo-container group relative text-xl sm:text-2xl transition-transform duration-300 hover:rotate-[-5deg] flex-shrink-0"
+            className="logo-container group relative text-xl sm:text-2xl transition-transform duration-300 hover:rotate-[-5deg] flex-shrink-0 flex items-center gap-2"
           >
             {showSantaHat && (
               <div className="santa-hat-wrapper">
                 <SantaHat />
               </div>
             )}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600 dark:from-primary dark:to-green-400">
-              {'<Julio/>'}
-            </span>
-            <span className="text-gray-600 dark:text-gray-400 font-normal">Develop</span>
+            <img src="/assets/logo-icon.png" alt="Julio Develop" className="h-12 w-12" />
           </Link>
 
           <nav className="hidden lg:flex space-x-6 xl:space-x-8">

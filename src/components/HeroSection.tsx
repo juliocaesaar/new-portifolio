@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { scrollToElement } from "@/lib/utils";
 import { useTranslation } from "@/hooks/useTranslation";
 import AnimatedBackground from "@/components/AnimatedBackground";
-
 // Importar logos das empresas
 import aggioLogo from "/public/assets/companies/aggio.png";
 import clusterLogo from "/public/assets/companies/cluster.png";

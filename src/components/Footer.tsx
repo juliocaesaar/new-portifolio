@@ -2,8 +2,6 @@ import { Link } from "wouter";
 import { scrollToElement } from "@/lib/utils";
 import { Github, Linkedin } from "lucide-react";
 import { useTranslation } from "@/hooks/useTranslation";
-import AnimatedBackground from "@/components/AnimatedBackground";
-
 export default function Footer() {
   const { t } = useTranslation();
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -13,18 +11,14 @@ export default function Footer() {
 
   return (
     <footer className="relative overflow-hidden bg-white dark:bg-[hsl(var(--dark-bg))] border-t border-gray-200 dark:border-[hsl(var(--dark-border))] py-12">
-      <AnimatedBackground />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-0">
           <div className="mb-8 md:mb-0">
             <Link
               href="/"
-              className="logo text-xl text-gray-900 dark:text-white flex items-center mb-4"
+              className="logo text-xl text-gray-900 dark:text-white flex items-center gap-2 mb-4"
             >
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600 dark:from-primary dark:to-green-400">
-                {'<Julio/>'}
-              </span>
-              <span className="text-gray-600 dark:text-gray-400 font-normal">Develop</span>
+              <img src="/assets/logo-icon.png" alt="Julio Develop" className="h-24 w-24" />
             </Link>
             <p className="text-gray-600 dark:text-gray-400 max-w-md">
               {t('footer.description')}
@@ -42,15 +36,6 @@ export default function Footer() {
                     className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-green-400 transition-colors"
                   >
                     {t('footer.about')}
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="#experience" 
-                    onClick={(e) => handleNavClick(e, "#experience")}
-                    className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-green-400 transition-colors"
-                  >
-                    {t('footer.experience')}
                   </a>
                 </li>
                 <li>

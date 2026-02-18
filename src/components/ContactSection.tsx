@@ -1,76 +1,16 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
-import { useToast } from "@/hooks/use-toast";
 import { useTranslation } from "@/hooks/useTranslation";
 import {
-  Mail,
   MapPin,
   Clock,
-  Send,
   Github,
   Linkedin,
   Instagram,
-  Twitter,
-  Dribbble
 } from "lucide-react";
-interface ContactForm {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-}
 
 export default function ContactSection() {
-  const { toast } = useToast();
   const { t } = useTranslation();
-  const [formData, setFormData] = useState<ContactForm>({
-    name: "",
-    email: "",
-    subject: "",
-    message: ""
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { id, value } = e.target;
-    setFormData(prev => ({ ...prev, [id]: value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    try {
-      setIsSubmitting(true);
-
-
-      toast({
-        title: "Message sent!",
-        description: "Thanks for reaching out. We'll get back to you soon.",
-      });
-
-      // Reset form after successful submission
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: ""
-      });
-    } catch (error) {
-      toast({
-        title: "Failed to send message",
-        description: "Please try again later or contact us directly via email.",
-        variant: "destructive"
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   return (
     <section id="contact" className="relative py-20 alt text-center">
@@ -94,7 +34,7 @@ export default function ContactSection() {
             <div className="space-y-6 mb-8 w-full lg:w-auto mx-auto">
               <div className="flex flex-col items-center justify-center text-center">
                 <div className="bg-primary/10 dark:bg-primary/20 p-3 rounded-lg mb-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="text-primary dark:text-green-400 h-5 w-5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary dark:text-green-400 h-5 w-5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
                 </div>
                 <div>
                   <h3 className="font-semibold">WhatsApp</h3>
@@ -110,7 +50,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h3 className="font-semibold">{t('contact.location_heading')}</h3>
-<p className="text-gray-600 dark:text-gray-400">{t('contact.location_text')}</p>
+                  <p className="text-gray-600 dark:text-gray-400">{t('contact.location_text')}</p>
                 </div>
               </div>
 
@@ -120,7 +60,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h3 className="font-semibold">{t('contact.availability_heading')}</h3>
-<p className="text-gray-600 dark:text-gray-400">{t('contact.availability_text')}</p>
+                  <p className="text-gray-600 dark:text-gray-400">{t('contact.availability_text')}</p>
                 </div>
               </div>
             </div>
@@ -129,7 +69,7 @@ export default function ContactSection() {
               <h3 className="font-semibold text-lg">{t('contact.connect_heading')}</h3>
               <div className="flex space-x-4 justify-center">
                 <a
-                  href="https://github.com/juliocaesaar" // Link do GitHub
+                  href="https://github.com/juliocaesaar"
                   className="bg-white dark:bg-[hsl(var(--dark-bg))] p-3 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-dark-border"
                   aria-label="GitHub Profile"
                   target="_blank"
@@ -138,7 +78,7 @@ export default function ContactSection() {
                   <Github className="h-5 w-5 text-gray-700 dark:text-gray-300" />
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/juliocesaar" // Link do LinkedIn atualizado
+                  href="https://www.linkedin.com/in/juliocesaar"
                   className="bg-white dark:bg-[hsl(var(--dark-bg))] p-3 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-dark-border"
                   aria-label="LinkedIn Profile"
                   target="_blank"
@@ -155,20 +95,9 @@ export default function ContactSection() {
                 >
                   <Instagram className="h-5 w-5 text-gray-700 dark:text-gray-300" />
                 </a>
-                {/* <a
-                  href="#" // Link placeholder
-                  className="bg-white dark:bg-[hsl(var(--dark-bg))] p-3 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-dark-border"
-                  aria-label="Twitter Profile"
-                >
-                  <Twitter className="h-5 w-5 text-gray-700 dark:text-gray-300" />
-                </a> */}
-                {/* Removido Dribbble pois não foi mencionado */}
               </div>
             </div>
           </motion.div>
-
-          {/* Formulário de contato removido */}
-
         </div>
       </div>
     </section>

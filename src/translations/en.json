@@ -159,6 +159,39 @@
     "subtitle": "A selection of projects that showcase our team's capabilities across different domains and technologies.",
     "items": [
       {
+        "title": "Aviva Run",
+        "category": "Landing Page",
+        "description": "Registration landing page for a 5KM charity run with countdown and tiered pricing.",
+        "image": "/assets/projects/avivarun.png",
+        "technologies": ["Next.js", "React", "Tailwind CSS"],
+        "caseStudyUrl": "#",
+        "githubUrl": null,
+        "externalUrl": "https://inscricao.avivarun.com.br/",
+        "badgeColor": "yellow"
+      },
+      {
+        "title": "Bemol9 Music School",
+        "category": "Landing Page",
+        "description": "Landing page for a music school offering piano, guitar, drums and vocal lessons.",
+        "image": "/assets/projects/bemol9.png",
+        "technologies": ["Next.js", "React", "Tailwind CSS"],
+        "caseStudyUrl": "#",
+        "githubUrl": null,
+        "externalUrl": "https://bemol9.vercel.app/",
+        "badgeColor": "purple"
+      },
+      {
+        "title": "NextLocal",
+        "category": "Platform",
+        "description": "Local marketplace to create digital catalogs and sell via WhatsApp.",
+        "image": "/assets/projects/nextlocal.png",
+        "technologies": ["Next.js", "React", "Tailwind CSS", "Node.js"],
+        "caseStudyUrl": "#",
+        "githubUrl": null,
+        "externalUrl": "https://nextlocal.com.br/",
+        "badgeColor": "green"
+      },
+      {
         "title": "Grupo Topazio",
         "category": "Institutional Site",
         "description": "Institutional website for Grupo Topazio.",
@@ -278,6 +311,17 @@
         "githubUrl": null,
         "externalUrl": "https://donnascoxinha.vercel.app/",
         "badgeColor": "pink"
+      },
+      {
+        "title": "Drummers School",
+        "category": "Landing Page",
+        "description": "Landing page for a drum school featuring exclusive methodology, lesson plans, and student testimonials.",
+        "image": "/assets/projects/drummerschool.webp",
+        "technologies": ["Next.js", "React", "Tailwind CSS"],
+        "caseStudyUrl": "#",
+        "githubUrl": null,
+        "externalUrl": "https://www.drummerschool.com.br/",
+        "badgeColor": "blue"
       }
     ],
     "view_case_study": "View Case Study",

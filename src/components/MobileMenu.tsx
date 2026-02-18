@@ -1,6 +1,4 @@
-import { Fragment, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Dialog, Transition } from "@headlessui/react";
+import * as Dialog from "@radix-ui/react-dialog";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { scrollToElement } from "@/lib/utils";
@@ -21,56 +19,33 @@ export default function MobileMenu({ isOpen, onClose, items }: MobileMenuProps) 
   };
 
   return (
-    <Transition show={isOpen} as={Fragment}>
-      <Dialog as="div" className="relative z-50" onClose={onClose}>
-        <Transition.Child
-          as={Fragment}
-          enter="ease-out duration-300"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave="ease-in duration-200"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
-        >
-          <div className="fixed inset-0 bg-black/25 backdrop-blur-sm" />
-        </Transition.Child>
-
-        <div className="fixed inset-0 overflow-y-auto">
-          <div className="flex min-h-full items-start justify-end">
-            <Transition.Child
-              as={Fragment}
-              enter="ease-out duration-300"
-              enterFrom="opacity-0 translate-x-full"
-              enterTo="opacity-100 translate-x-0"
-              leave="ease-in duration-200"
-              leaveFrom="opacity-100 translate-x-0"
-              leaveTo="opacity-0 translate-x-full"
-            >
-              <Dialog.Panel className="fixed right-0 top-0 h-full w-[75%] max-w-sm bg-background shadow-xl">
-                <div className="flex items-center justify-between p-4 border-b border-border">
-                  <Dialog.Title className="text-lg font-medium">
-                    Menu
-                  </Dialog.Title>
-                  <Button variant="ghost" size="icon" onClick={onClose}>
-                    <X className="h-5 w-5" />
-                  </Button>
-                </div>
-                <div className="py-4">
-                  {items.map((item) => (
-                    <button
-                      key={item.name}
-                      className="block w-full text-left py-3 px-6 hover:bg-muted transition-colors"
-                      onClick={() => handleNavClick(item.href)}
-                    >
-                      {t(item.name)}
-                    </button>
-                  ))}
-                </div>
-              </Dialog.Panel>
-            </Transition.Child>
+    <Dialog.Root open={isOpen} onOpenChange={(open) => !open && onClose()}>
+      <Dialog.Portal>
+        <Dialog.Overlay className="fixed inset-0 z-50 bg-black/25 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
+        <Dialog.Content className="fixed right-0 top-0 z-50 h-full w-[75%] max-w-sm bg-background shadow-xl transition-transform duration-300 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right">
+          <div className="flex items-center justify-between p-4 border-b border-border">
+            <Dialog.Title className="text-lg font-medium">
+              Menu
+            </Dialog.Title>
+            <Dialog.Close asChild>
+              <Button variant="ghost" size="icon">
+                <X className="h-5 w-5" />
+              </Button>
+            </Dialog.Close>
           </div>
-        </div>
-      </Dialog>
-    </Transition>
+          <div className="py-4">
+            {items.map((item) => (
+              <button
+                key={item.name}
+                className="block w-full text-left py-3 px-6 hover:bg-muted transition-colors"
+                onClick={() => handleNavClick(item.href)}
+              >
+                {t(item.name)}
+              </button>
+            ))}
+          </div>
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
   );
 }
