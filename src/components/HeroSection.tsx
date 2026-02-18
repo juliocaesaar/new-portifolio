@@ -57,6 +57,11 @@ const childVariants = {
   },
 };
 
+const marqueeGradientStyle = {
+  maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+  WebkitMaskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+} as const;
+
 export default function HeroSection() {
   const { t } = useTranslation();
 
@@ -156,15 +161,12 @@ export default function HeroSection() {
           <p className="text-sm text-gray-500 dark:text-gray-400 w-full text-center mb-2">{t('hero.trustedByCompaniesWorldwide')}</p>
           <div
             className="relative w-full overflow-hidden"
-            style={{
-              maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
-              WebkitMaskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
-            }}
+            style={marqueeGradientStyle}
           >
             <div className="flex w-max animate-marquee hover:[animation-play-state:paused]">
               {[...companyLogos, ...companyLogos].map((logo, index) => (
                 <div
-                  key={index}
+                  key={`${logo.name}-${index}`}
                   className="mx-10 flex h-16 w-32 shrink-0 items-center justify-center"
                 >
                   <img

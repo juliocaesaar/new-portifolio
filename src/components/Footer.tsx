@@ -53,7 +53,7 @@ export default function Footer() {
                     onClick={(e) => handleNavClick(e, "#experience")}
                     className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-green-400 transition-colors"
                   >
-                    {t('header.skills')}
+                    {t('footer.services')}
                   </a>
                 </li>
                 <li>
