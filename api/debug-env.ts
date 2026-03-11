@@ -1,8 +1,14 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { loadEnv } from "./_lib/load-env";
 
 export default function handler(_req: VercelRequest, res: VercelResponse) {
-  loadEnv();
+  try {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const { loadEnv } = require("./_lib/load-env");
+    loadEnv();
+  } catch (err: unknown) {
+    const msg = err instanceof Error ? err.message : String(err);
+    return res.status(200).json({ load_error: msg });
+  }
 
   const mpToken = process.env.MP_ACCESS_TOKEN;
   return res.status(200).json({
