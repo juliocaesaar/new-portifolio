@@ -1,19 +1,39 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
+import { readdirSync, existsSync, readFileSync } from "fs";
+import { execSync } from "child_process";
 
-export default async function handler(_req: VercelRequest, res: VercelResponse) {
+export default function handler(_req: VercelRequest, res: VercelResponse) {
+  const results: Record<string, unknown> = {};
+
+  // Check /opt for available scripts
   try {
-    const { loadEnv } = await import("./_lib/load-env.js");
-    loadEnv();
-  } catch (err: unknown) {
-    const msg = err instanceof Error ? `${err.message}\n${err.stack}` : String(err);
-    return res.status(200).json({ load_error: msg });
-  }
+    results.opt_rust = readdirSync("/opt/rust");
+  } catch { results.opt_rust = "not found"; }
 
-  const mpToken = process.env.MP_ACCESS_TOKEN;
-  return res.status(200).json({
-    has_mp_token: !!mpToken,
-    mp_token_prefix: mpToken ? mpToken.slice(0, 10) + "..." : "undefined",
-    has_resend: !!process.env.RESEND_API_KEY,
-    has_site_url: !!process.env.SITE_URL,
-  });
+  // Check for env bootstrap scripts
+  try {
+    results.opt_files = readdirSync("/opt").slice(0, 20);
+  } catch { results.opt_files = "not found"; }
+
+  // Try running the bootstrap env loader if it exists
+  const envLoaderPaths = [
+    "/opt/rust/env.js",
+    "/opt/rust/load-env.js",
+    "/opt/rust/bootstrap.js",
+    "/opt/bootstrap",
+    "/var/task/.env",
+  ];
+  results.env_loader_exists = envLoaderPaths.filter(p => existsSync(p));
+
+  // Check ___vc directory
+  try {
+    results.vc_dir = readdirSync("___vc");
+  } catch { results.vc_dir = "not found"; }
+
+  // Try to see if there's a decrypt binary
+  try {
+    results.decrypt_bin = execSync("which decrypt 2>/dev/null || which vercel-env 2>/dev/null || echo 'none'").toString().trim();
+  } catch { results.decrypt_bin = "error"; }
+
+  return res.status(200).json(results);
 }
