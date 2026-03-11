@@ -8,3 +8,4 @@ vite.config.ts.*
 .claude
 .env
 .env.local
+api/_lib/env.json
