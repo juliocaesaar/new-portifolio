@@ -1,5 +1,4 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { loadEnv } from "./_lib/load-env";
 
 const MP_API = "https://api.mercadopago.com";
 
@@ -19,8 +18,6 @@ interface CreatePaymentBody {
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  loadEnv();
-
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }

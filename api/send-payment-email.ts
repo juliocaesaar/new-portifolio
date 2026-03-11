@@ -1,6 +1,5 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { Resend } from "resend";
-import { loadEnv } from "./_lib/load-env";
 
 function buildEmailHtml(name: string, lang: string): string {
   const isPt = lang === "pt";
@@ -105,8 +104,6 @@ function buildEmailHtml(name: string, lang: string): string {
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  loadEnv();
-
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
