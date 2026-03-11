@@ -1,4 +1,4 @@
-import { writeFileSync, mkdirSync } from "fs";
+import { writeFileSync } from "fs";
 
 const KEYS = ["MP_ACCESS_TOKEN", "MP_PUBLIC_KEY", "RESEND_API_KEY", "SITE_URL"];
 
@@ -12,6 +12,5 @@ ${entries.join("\n")}
 };
 `;
 
-mkdirSync("api/_lib", { recursive: true });
-writeFileSync("api/_lib/build-env.ts", content);
+writeFileSync("api/_build-env.ts", content);
 console.log("[write-env] Wrote " + entries.length + "/" + KEYS.length + " vars");

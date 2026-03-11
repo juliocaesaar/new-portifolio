@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { ENV } from "./_lib/build-env";
+import { ENV } from "./_build-env";
 
 export default function handler(_req: VercelRequest, res: VercelResponse) {
   for (const [k, v] of Object.entries(ENV)) {
