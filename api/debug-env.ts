@@ -1,12 +1,14 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
+import { readFileSync, existsSync } from "fs";
 
 export default function handler(_req: VercelRequest, res: VercelResponse) {
-  const allKeys = Object.keys(process.env).filter(
-    (k) => k.startsWith("MP_") || k.startsWith("RESEND") || k.startsWith("SITE") || k.startsWith("VERCEL")
-  );
+  const envFile = process.env.VERCEL_ENV_FILE;
+  const envFileExists = envFile ? existsSync(envFile) : false;
+
   return res.status(200).json({
-    env_keys: allKeys,
-    vercel_env: process.env.VERCEL_ENV,
-    node_env: process.env.NODE_ENV,
+    env_file_path: envFile ?? "not set",
+    env_file_exists: envFileExists,
+    env_file_size: envFileExists && envFile ? readFileSync(envFile).length : 0,
+    preload_scripts: process.env.VERCEL_NODE_PRELOAD_SCRIPTS ?? "not set",
   });
 }
