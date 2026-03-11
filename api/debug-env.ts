@@ -1,46 +1,34 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { readFileSync, existsSync } from "fs";
-import { createDecipheriv } from "crypto";
+import { readFileSync, existsSync, readdirSync } from "fs";
 
 export default function handler(_req: VercelRequest, res: VercelResponse) {
-  const envFile = process.env.VERCEL_ENV_FILE;
-  const encKey = process.env.VERCEL_ENV_ENC_KEY;
+  const results: Record<string, unknown> = {};
 
-  if (!envFile || !encKey || !existsSync(envFile)) {
-    return res.status(200).json({ error: "no env file" });
-  }
-
+  // Check /proc/self/environ
   try {
-    const data = readFileSync(envFile);
-    const key = Buffer.from(encKey, "base64");
-    const iv = data.subarray(0, 16);
-    const ct = data.subarray(16);
-    const d = createDecipheriv("aes-256-cbc", key, iv);
-    const decrypted = Buffer.concat([d.update(ct), d.final()]).toString("utf-8");
-
-    // Split by null byte
-    const entries = decrypted.split("\0").filter(Boolean);
-    const envMap: Record<string, string> = {};
-    for (const entry of entries) {
-      const eqIdx = entry.indexOf("=");
-      if (eqIdx > 0) {
-        envMap[entry.slice(0, eqIdx)] = entry.slice(eqIdx + 1);
-      }
-    }
-
-    // Check for our vars
-    const ourVars = ["MP_ACCESS_TOKEN", "RESEND_API_KEY", "SITE_URL", "MP_PUBLIC_KEY"];
-    const found: Record<string, boolean> = {};
-    for (const v of ourVars) {
-      found[v] = v in envMap;
-    }
-
-    return res.status(200).json({
-      total_vars: entries.length,
-      our_vars_found: found,
-      all_keys: Object.keys(envMap),
-    });
+    const environ = readFileSync("/proc/self/environ", "utf-8");
+    const keys = environ.split("\0").filter(Boolean).map(e => e.split("=")[0]);
+    results.proc_env_keys = keys;
+    results.has_mp_in_proc = keys.some(k => k === "MP_ACCESS_TOKEN");
   } catch (e: any) {
-    return res.status(200).json({ error: e.message });
+    results.proc_error = e.message;
   }
+
+  // Check for additional env files
+  try {
+    const vcFiles = readdirSync("___vc");
+    results.vc_files = vcFiles;
+  } catch { results.vc_files = []; }
+
+  // Check /var/task for env files
+  try {
+    const taskFiles = readdirSync("/var/task").filter(f => f.includes("env") || f.startsWith("."));
+    results.task_env_files = taskFiles;
+  } catch { results.task_env_files = []; }
+
+  // Total process.env keys count
+  results.process_env_count = Object.keys(process.env).length;
+  results.process_env_keys = Object.keys(process.env).filter(k => !k.startsWith("VERCEL") && !k.startsWith("NX") && !k.startsWith("TURBO") && !k.startsWith("AWS") && !k.startsWith("_") && !k.startsWith("NODE") && !k.startsWith("PATH"));
+
+  return res.status(200).json(results);
 }
