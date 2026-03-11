@@ -1,5 +1,4 @@
 import { readFileSync } from "fs";
-import { join } from "path";
 
 let loaded = false;
 
@@ -8,10 +7,9 @@ export function loadEnv(): void {
   loaded = true;
 
   const paths = [
-    join(process.cwd(), "api/_lib/env.json"),
-    join(__dirname, "env.json"),
-    "api/_lib/env.json",
     "/var/task/api/_lib/env.json",
+    "api/_lib/env.json",
+    "./api/_lib/env.json",
   ];
 
   let content: string | null = null;
@@ -24,10 +22,7 @@ export function loadEnv(): void {
     }
   }
 
-  if (!content) {
-    console.error("loadEnv: env.json not found in any path");
-    return;
-  }
+  if (!content) return;
 
   try {
     const env = JSON.parse(content) as Record<string, string>;
