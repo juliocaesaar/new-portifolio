@@ -2,17 +2,16 @@ import { writeFileSync, mkdirSync } from "fs";
 
 const KEYS = ["MP_ACCESS_TOKEN", "MP_PUBLIC_KEY", "RESEND_API_KEY", "SITE_URL"];
 
-const lines = KEYS
+const entries = KEYS
   .filter(k => process.env[k])
-  .map(k => `  ${k}: ${JSON.stringify(process.env[k])},`);
+  .map(k => `  ${JSON.stringify(k)}: ${JSON.stringify(process.env[k])},`);
 
-const content = `// Auto-generated at build time — do not edit
-const ENV: Record<string, string> = {
-${lines.join("\n")}
+const content = `// Auto-generated at build time by scripts/write-env.mjs
+export const ENV: Record<string, string> = {
+${entries.join("\n")}
 };
-export default ENV;
 `;
 
 mkdirSync("api/_lib", { recursive: true });
 writeFileSync("api/_lib/build-env.ts", content);
-console.log(`[write-env] Wrote ${lines.length}/${KEYS.length} vars`);
+console.log("[write-env] Wrote " + entries.length + "/" + KEYS.length + " vars");

@@ -1,3 +1,2 @@
-// Placeholder — overwritten at build time by scripts/write-env.mjs
-const ENV: Record<string, string> = {};
-export default ENV;
+// Auto-generated at build time by scripts/write-env.mjs
+export const ENV: Record<string, string> = {};
