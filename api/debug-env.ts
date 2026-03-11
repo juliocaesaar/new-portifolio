@@ -1,17 +1,14 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { readFileSync, existsSync } from "fs";
+import { loadEnv } from "./_lib/load-env";
 
 export default function handler(_req: VercelRequest, res: VercelResponse) {
-  const envFile = process.env.VERCEL_ENV_FILE;
-  const encKey = process.env.VERCEL_ENV_ENC_KEY;
+  loadEnv();
 
-  let content = "no file";
-  if (envFile && existsSync(envFile)) {
-    content = readFileSync(envFile, "utf-8").slice(0, 200);
-  }
-
+  const mpToken = process.env.MP_ACCESS_TOKEN;
   return res.status(200).json({
-    enc_key_length: encKey?.length ?? 0,
-    content_preview: content,
+    has_mp_token: !!mpToken,
+    mp_token_prefix: mpToken ? mpToken.slice(0, 10) + "..." : "undefined",
+    has_resend: !!process.env.RESEND_API_KEY,
+    has_site_url: !!process.env.SITE_URL,
   });
 }

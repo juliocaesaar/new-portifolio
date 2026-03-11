@@ -14,12 +14,13 @@ export function loadEnv(): void {
 
   try {
     const encrypted = readFileSync(envFile);
-    // Vercel uses AES-256-GCM: first 12 bytes = IV, last 16 bytes = auth tag, middle = ciphertext
+    const keyBuffer = Buffer.from(encKey, "base64");
+
+    // Try AES-256-GCM: 12-byte IV, 16-byte auth tag at end
     const iv = encrypted.subarray(0, 12);
     const authTag = encrypted.subarray(encrypted.length - 16);
     const ciphertext = encrypted.subarray(12, encrypted.length - 16);
 
-    const keyBuffer = Buffer.from(encKey, "hex");
     const decipher = createDecipheriv("aes-256-gcm", keyBuffer, iv);
     decipher.setAuthTag(authTag);
 
@@ -33,8 +34,10 @@ export function loadEnv(): void {
       if (eqIndex === -1) continue;
       const key = trimmed.slice(0, eqIndex);
       let value = trimmed.slice(eqIndex + 1);
-      // Remove surrounding quotes
-      if ((value.startsWith('"') && value.endsWith('"')) || (value.startsWith("'") && value.endsWith("'"))) {
+      if (
+        (value.startsWith('"') && value.endsWith('"')) ||
+        (value.startsWith("'") && value.endsWith("'"))
+      ) {
         value = value.slice(1, -1);
       }
       if (!process.env[key]) {
