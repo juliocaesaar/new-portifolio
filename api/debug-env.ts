@@ -2,12 +2,33 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { readFileSync } from "fs";
 
 export default function handler(_req: VercelRequest, res: VercelResponse) {
-  let nodejsJs = "";
+  let content = "";
   try {
-    nodejsJs = readFileSync("/opt/rust/nodejs.js", "utf-8").slice(0, 2000);
+    content = readFileSync("/opt/rust/nodejs.js", "utf-8");
   } catch (e) {
-    nodejsJs = String(e);
+    return res.status(200).json({ error: String(e) });
   }
 
-  return res.status(200).json({ nodejs_js: nodejsJs });
+  // Search for env-related code
+  const matches: string[] = [];
+  const keywords = ["VERCEL_ENV_FILE", "VERCEL_ENV_ENC", "decrypt", "env.encrypted", "__env", "loadEnv", "dotenv"];
+
+  for (const kw of keywords) {
+    const idx = content.indexOf(kw);
+    if (idx !== -1) {
+      matches.push(`${kw} at ${idx}: ...${content.slice(Math.max(0, idx - 30), idx + 80)}...`);
+    }
+  }
+
+  // Also check source-map-support.js
+  let sms = "";
+  try {
+    sms = readFileSync("/opt/rust/source-map-support.js", "utf-8").slice(0, 500);
+  } catch { sms = "not found"; }
+
+  return res.status(200).json({
+    matches,
+    source_map_support_preview: sms,
+    nodejs_js_length: content.length
+  });
 }
