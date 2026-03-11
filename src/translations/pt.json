@@ -354,6 +354,12 @@
     "dribbble": "Dribbble",
     "all_rights_reserved": "Todos os direitos reservados."
   },
+  "payment": {
+    "title": "Pagamento Aprovado!",
+    "description": "Seu pagamento foi processado com sucesso. Obrigado pela confiança na JulioDevelop!",
+    "confirmation_note": "Você receberá um e-mail de confirmação em breve com os detalhes da transação.",
+    "back_home": "Voltar para o início"
+  },
   "contact": {
     "heading": "Entre em Contato",
     "name": "Nome",

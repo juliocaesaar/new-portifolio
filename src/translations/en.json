@@ -354,6 +354,12 @@
     "dribbble": "Dribbble",
     "all_rights_reserved": "All rights reserved."
   },
+  "payment": {
+    "title": "Payment Approved!",
+    "description": "Your payment has been successfully processed. Thank you for trusting JulioDevelop!",
+    "confirmation_note": "You will receive a confirmation email shortly with the transaction details.",
+    "back_home": "Back to home"
+  },
   "contact": {
     "heading": "Get in Touch",
     "name": "Name",
