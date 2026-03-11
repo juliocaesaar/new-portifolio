@@ -1,12 +1,11 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 
-export default function handler(_req: VercelRequest, res: VercelResponse) {
+export default async function handler(_req: VercelRequest, res: VercelResponse) {
   try {
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
-    const { loadEnv } = require("./_lib/load-env");
+    const { loadEnv } = await import("./_lib/load-env.js");
     loadEnv();
   } catch (err: unknown) {
-    const msg = err instanceof Error ? err.message : String(err);
+    const msg = err instanceof Error ? `${err.message}\n${err.stack}` : String(err);
     return res.status(200).json({ load_error: msg });
   }
 
