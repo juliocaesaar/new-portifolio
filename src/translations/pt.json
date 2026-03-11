@@ -357,6 +357,10 @@
   "payment": {
     "title": "Pagamento Aprovado!",
     "description": "Seu pagamento foi processado com sucesso. Obrigado pela confiança na JulioDevelop!",
+    "failure_title": "Pagamento não aprovado",
+    "failure_description": "Houve um problema com seu pagamento. Tente novamente ou utilize outro método de pagamento.",
+    "pending_title": "Pagamento pendente",
+    "pending_description": "Seu pagamento está sendo processado. Você receberá uma notificação assim que for confirmado.",
     "confirmation_note": "Você receberá um e-mail de confirmação em breve com os detalhes da transação.",
     "back_home": "Voltar para o início"
   },

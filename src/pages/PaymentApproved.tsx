@@ -1,12 +1,20 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useSearch } from "wouter";
-import { CheckCircle, Mail, Loader2 } from "lucide-react";
+import { CheckCircle, XCircle, Clock, Mail, Loader2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useTranslation } from "@/hooks/useTranslation";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { useLanguage } from "@/context/LanguageContext";
 
 type EmailStatus = "idle" | "sending" | "sent" | "error";
+type PaymentStatus = "approved" | "failure" | "pending";
+
+function getPaymentStatus(params: URLSearchParams): PaymentStatus {
+  const status = params.get("status") ?? params.get("collection_status");
+  if (status === "failure" || status === "rejected") return "failure";
+  if (status === "pending" || status === "in_process") return "pending";
+  return "approved";
+}
 
 async function sendConfirmationEmail(
   email: string,
@@ -25,6 +33,27 @@ async function sendConfirmationEmail(
   }
 }
 
+const statusConfig = {
+  approved: {
+    icon: CheckCircle,
+    iconClass: "text-primary",
+    titleKey: "payment.title",
+    descriptionKey: "payment.description",
+  },
+  failure: {
+    icon: XCircle,
+    iconClass: "text-red-500",
+    titleKey: "payment.failure_title",
+    descriptionKey: "payment.failure_description",
+  },
+  pending: {
+    icon: Clock,
+    iconClass: "text-yellow-500",
+    titleKey: "payment.pending_title",
+    descriptionKey: "payment.pending_description",
+  },
+} as const;
+
 export default function PaymentApproved() {
   const { t } = useTranslation();
   const { language, setLanguage } = useLanguage();
@@ -33,18 +62,24 @@ export default function PaymentApproved() {
   const emailSentRef = useRef(false);
 
   const params = new URLSearchParams(searchString);
+  const paymentStatus = getPaymentStatus(params);
   const email = params.get("email") ?? "";
   const name = params.get("name") ?? "";
+  const paymentId = params.get("payment_id") ?? params.get("collection_id") ?? "";
 
+  const config = statusConfig[paymentStatus];
+  const StatusIcon = config.icon;
+
+  // Envia e-mail manual apenas se vier com ?email= (fallback sem webhook)
   useEffect(() => {
-    if (!email || emailSentRef.current) return;
+    if (!email || paymentStatus !== "approved" || emailSentRef.current) return;
     emailSentRef.current = true;
 
     setEmailStatus("sending");
     sendConfirmationEmail(email, name, language).then((ok) => {
       setEmailStatus(ok ? "sent" : "error");
     });
-  }, [email, name, language]);
+  }, [email, name, language, paymentStatus]);
 
   const toggleLanguage = () => {
     setLanguage(language === "pt" ? "en" : "pt");
@@ -96,26 +131,34 @@ export default function PaymentApproved() {
             animate={{ scale: 1 }}
             transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
           >
-            <CheckCircle className="h-24 w-24 text-primary mx-auto mb-6" />
+            <StatusIcon className={`h-24 w-24 ${config.iconClass} mx-auto mb-6`} />
           </motion.div>
 
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            {t("payment.title")}
+            {t(config.titleKey)}
           </h1>
 
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
-            {t("payment.description")}
+            {t(config.descriptionKey)}
           </p>
 
-          {email && (
+          {paymentId && (
+            <p className="text-xs text-gray-400 dark:text-gray-600 mb-4 font-mono">
+              ID: {paymentId}
+            </p>
+          )}
+
+          {email && paymentStatus === "approved" && (
             <EmailStatusBadge status={emailStatus} email={email} lang={language} />
           )}
 
-          {!email && (
+          {!email && paymentStatus === "approved" && (
             <p className="text-sm text-gray-500 dark:text-gray-500 mb-8">
               {t("payment.confirmation_note")}
             </p>
           )}
+
+          {paymentStatus !== "approved" && <div className="mb-8" />}
 
           <Link
             href="/"

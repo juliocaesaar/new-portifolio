@@ -357,6 +357,10 @@
   "payment": {
     "title": "Payment Approved!",
     "description": "Your payment has been successfully processed. Thank you for trusting JulioDevelop!",
+    "failure_title": "Payment not approved",
+    "failure_description": "There was an issue with your payment. Please try again or use a different payment method.",
+    "pending_title": "Payment pending",
+    "pending_description": "Your payment is being processed. You will be notified once it is confirmed.",
     "confirmation_note": "You will receive a confirmation email shortly with the transaction details.",
     "back_home": "Back to home"
   },
