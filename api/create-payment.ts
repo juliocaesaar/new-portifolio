@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
+import { loadEnv } from "./_lib/load-env";
 
 const MP_API = "https://api.mercadopago.com";
-const SITE_URL = process.env.SITE_URL ?? "https://juliodevelop.com";
 
 interface PaymentItem {
   title: string;
@@ -19,10 +19,13 @@ interface CreatePaymentBody {
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
+  loadEnv();
+
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
+  const SITE_URL = process.env.SITE_URL ?? "https://juliodevelop.online";
   const accessToken = process.env.MP_ACCESS_TOKEN;
   if (!accessToken) {
     console.error("MP_ACCESS_TOKEN not configured");

@@ -1,7 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { Resend } from "resend";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+import { loadEnv } from "./_lib/load-env";
 
 function buildEmailHtml(name: string, lang: string): string {
   const isPt = lang === "pt";
@@ -106,6 +105,8 @@ function buildEmailHtml(name: string, lang: string): string {
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
+  loadEnv();
+
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
@@ -130,6 +131,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       : "Payment Approved - JulioDevelop";
 
   try {
+    const resend = new Resend(process.env.RESEND_API_KEY);
     const { data, error } = await resend.emails.send({
       from: "JulioDevelop <noreply@juliodevelop.online>",
       to: email,

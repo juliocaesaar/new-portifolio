@@ -1,8 +1,8 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { Resend } from "resend";
+import { loadEnv } from "../_lib/load-env";
 
 const MP_API = "https://api.mercadopago.com";
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 interface MpPayment {
   id: number;
@@ -205,6 +205,8 @@ async function fetchPayment(paymentId: string): Promise<MpPayment | null> {
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
+  loadEnv();
+
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
@@ -240,6 +242,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return res.status(200).json({ received: true, no_email: true });
     }
 
+    const resend = new Resend(process.env.RESEND_API_KEY);
     const { error } = await resend.emails.send({
       from: "JulioDevelop <noreply@juliodevelop.online>",
       to: payerEmail,
